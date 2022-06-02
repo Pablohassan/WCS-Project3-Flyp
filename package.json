@@ -16,6 +16,15 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^7.0.0",
-    "husky": "^7.0.0"
+    "husky": "^7.0.0",
+    "tailwindcss": "^3.0.24"
+  },
+  "dependencies": {
+    "argon2": "^0.28.5",
+    "gyp": "^0.5.0",
+    "joi": "^17.6.0",
+    "node-pre-gyp": "^0.17.0",
+    "nodemon": "^2.0.16",
+    "react-router-dom": "^6.3.0"
   }
 }
