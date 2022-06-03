@@ -27,6 +27,7 @@ jobs:
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             cd /home/instructor/projects/flyp
+            git stash
             git pull
             npm run setup
             cd backend
