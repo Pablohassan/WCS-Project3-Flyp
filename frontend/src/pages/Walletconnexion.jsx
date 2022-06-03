@@ -1,3 +1,4 @@
+import Navbar from "@components/Navbar";
 import { Link } from "react-router-dom";
 
 export default function WalletConnexion() {
@@ -20,6 +21,7 @@ export default function WalletConnexion() {
               // onChange={(event) => onLoginChange(event.target.value)}
             />
           </div>
+          <Navbar />
           <input
             className="Password"
             // value={pass}

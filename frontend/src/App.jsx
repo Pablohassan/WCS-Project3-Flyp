@@ -25,7 +25,7 @@ function App() {
               />
             }
           />
-          <Route path="Wallet" element={<Wallet />} />
+          <Route path="/Wallet" element={<Wallet />} />
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>
