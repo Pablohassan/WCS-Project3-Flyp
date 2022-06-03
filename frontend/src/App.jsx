@@ -1,15 +1,16 @@
 import { Routes, Route } from "react-router-dom";
-// import { useState } from "react";
+import { useState } from "react";
 import WalletConnexion from "@pages/Walletconnexion";
 import Wallet from "@pages/Wallet";
 import Administration from "@pages/Administration";
 import BaseLayout from "./layout/BaseLayout";
 import AdminLayout from "./layout/AdminLayout";
 import "./App.css";
+// import SearchBar from "@components/SearchBar";
 
 function App() {
-  // const [login, setlog] = useState("");
-  // const [pass, setPass] = useState("");
+  const [login, setlog] = useState("");
+  const [pass, setPass] = useState("");
   return (
     <div className="App bg-zinc-400">
       <Routes>
@@ -18,14 +19,14 @@ function App() {
             path=""
             element={
               <WalletConnexion
-              // login={login}
-              // onLoginChange={setlog}
-              // pass={pass}
-              // onPasschange={setPass}
+                login={login}
+                onLoginChange={setlog}
+                pass={pass}
+                onPasschange={setPass}
               />
             }
           />
-          <Route path="/Wallet" element={<Wallet />} />
+          <Route path="wallet" element={<Wallet />} />
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>

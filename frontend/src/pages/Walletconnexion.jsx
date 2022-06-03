@@ -1,10 +1,12 @@
-import Navbar from "@components/Navbar";
+// import Navbar from "@components/Navbar";
 import { Link } from "react-router-dom";
+import SignIn from "@components/SignIn";
 
 export default function WalletConnexion() {
   return (
     <div>
-      <h1 className="font-bold text-blue-500"> Flyp</h1>
+      <SignIn />
+      {/* <h1 className="font-bold text-blue-500"> Flyp</h1>
       <h3>
         Bienvenu sur ton Wallet Flyp, identifie toi afin d'acceder à l'ensemble
         de ta collection
@@ -29,7 +31,7 @@ export default function WalletConnexion() {
             // onChange={(event) => onPassChange(event.target.value)}
           />
         </div>
-      </header>
+      </header> */}
       <Link to="/Wallet">
         <button type="button"> Valider</button>
       </Link>
