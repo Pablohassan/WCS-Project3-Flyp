@@ -3,6 +3,8 @@ import { useState } from "react";
 import WalletConnexion from "@pages/Walletconnexion";
 import Wallet from "@pages/Wallet";
 import Administration from "@pages/Administration";
+import Top from "@pages/Top";
+import Project from "@pages/Project";
 import BaseLayout from "./layout/BaseLayout";
 import AdminLayout from "./layout/AdminLayout";
 import "./App.css";
@@ -26,7 +28,9 @@ function App() {
               />
             }
           />
-          <Route path="wallet" element={<Wallet />} />
+          <Route path="/wallet" element={<Wallet />} />
+          <Route path="/project" element={<Project />} />
+          <Route path="/top" element={<Top />} />
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>
