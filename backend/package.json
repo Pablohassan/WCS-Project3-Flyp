@@ -18,7 +18,8 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "mysql2": "^2.3.3",
-    "template-fullstack": "file:.."
+    "template-fullstack": "file:..",
+    "react-with-gesture": "^4.0.8"
   },
   "rules": {
     "no-console": [

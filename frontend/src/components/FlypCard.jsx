@@ -18,8 +18,11 @@ export default function flypCard() {
 
   return (
     <div>
-      <section className={`cardfocus${isOpen ? "open" : "closed"}`}>
-        <div className="flycard w-[300px] h-[175px] bg-transparent cursor-pointer group perspective">
+      <section
+        className={`cardfocus${isOpen ? "open w-full" : "closed w-full"}`}
+      >
+        <div className="flycard w-[95%] h-[250px] mx-auto cursor-pointer group perspective">
+          <div />
           <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
             <div className="absolute backface-hidden rounded-xl border-2 w-full h-full">
               <img
