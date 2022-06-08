@@ -11,14 +11,16 @@
   },
   "dependencies": {
     "dotenv": "^16.0.1",
+    "esbuild": "^0.14.43",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-responsive": "^9.0.0-beta.8",
     "react-router-dom": "^6.3.0",
     "react-spring": "^9.4.5",
     "react-spring-3d-carousel": "^1.2.1",
-    "uuid": "^8.3.2",
-    "react-responsive": "^9.0.0-beta.8"
+    "template-fullstack": "file:..",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",

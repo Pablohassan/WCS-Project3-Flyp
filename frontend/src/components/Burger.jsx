@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 export default function Burger() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
+  const hideBurger = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
   return (
     <div className="flex items-center justify-between ">
       <nav>
@@ -11,7 +15,7 @@ export default function Burger() {
           <button
             type="button"
             className="HAMBURGER-ICON space-y-2 cursor-pointer"
-            onClick={() => setIsNavOpen(!isNavOpen)}
+            onClick={hideBurger}
           >
             <span className="block h-0.5 w-8 animate-pulse bg-gray-600" />
             <span className="block h-0.5 w-8 animate-pulse bg-gray-600" />
@@ -38,19 +42,37 @@ export default function Burger() {
               </svg>
             </button>
 
-            <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
-              <li className="border-b border-gray-400 my-8 uppercase">
-                <Link to="/wallet">Wallet</Link>
+            <ul className="MENU-LINK-MOBILE-OPEN flex flex-col justify-center items-center justify-between min-h-[250px] w-full ">
+              <li className=" flex justify-center border-b border-gray-400 my-8 uppercase hover:bg-gray-600/50 w-full my-0 h-20">
+                <Link
+                  className="w-full items-center flex justify-center"
+                  to="/wallet"
+                  onClick={hideBurger}
+                >
+                  Wallet
+                </Link>
               </li>
-              <li className="border-b border-gray-400 my-8 uppercase">
-                <Link to="/project">Projet</Link>
+              <li className="flex justify-center border-b border-gray-400 my-8 uppercase hover:bg-gray-600/50 w-full my-0 h-20">
+                <Link
+                  className=" w-full flex items-center justify-center "
+                  to="/project"
+                  onClick={hideBurger}
+                >
+                  Projet
+                </Link>
               </li>
-              <li className="border-b border-gray-400 my-8 uppercase">
-                <Link to="/top">Top</Link>
+              <li className="flex justify-center  border-b border-gray-400 my-8 uppercase hover:bg-gray-600/50 w-full my-0 h-20">
+                <Link
+                  className="w-full flex items-center justify-center"
+                  to="/top"
+                  onClick={hideBurger}
+                >
+                  Top
+                </Link>
               </li>
               <li>
                 <img
-                  className="rounded-full  h-20 w-20 mr-2"
+                  className="rounded-full  h-20 w-20 mr-2 mt-5"
                   src=".\src\assets\ProfilPic.jpg"
                   alt="ProfilPic"
                 />
