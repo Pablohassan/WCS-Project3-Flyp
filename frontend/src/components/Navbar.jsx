@@ -8,7 +8,7 @@ export default function Navbar() {
         <div className="flex justify-between ">
           <div className="flex space-x-7 ">
             <div>
-              <Link to="/" className="flex items-center py-4 px-2">
+              <Link to="/" className="flex items-center py-4 px-0">
                 <img
                   src=".\src\assets\FLY. Logo.png"
                   alt="Logo"

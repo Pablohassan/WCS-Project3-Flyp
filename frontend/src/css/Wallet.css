@@ -1,0 +1,79 @@
+.header-wallet {
+  height: 100px;
+  max-width: 500px;
+  min-width: 370px;
+  max-height: 500px;
+}
+.titre-wallet {
+  position: fixed;
+  top: 15%;
+  left: 28%;
+
+  padding: 2%;
+  font-size: 2em;
+}
+.section2-wallet {
+  display: flex;
+  position: absolute;
+
+  max-height: 50px;
+  width: 100%;
+  max-width: 65%;
+
+  padding-right: 0;
+  margin-bottom: 0;
+}
+.menu-bas1 {
+  display: flex;
+  background-color: rgb(201, 3, 3);
+  font-size: 1.1em;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  width: 50%;
+  border: solid;
+  color: white;
+  border: 1px;
+  padding: 5px;
+  border-color: rgba(0, 0, 0, 0.308);
+  border-radius: 2px;
+  box-shadow: 1px 0.5px 0px black;
+  text-shadow: 1px 0.5px 0px black;
+  padding: 1%;
+  margin-left: 8%;
+  border-radius: 5px;
+}
+.menu-bas2 {
+  display: flex;
+  font-size: 1.1em;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(201, 3, 3);
+  width: 50%;
+  border: solid;
+  border: 2px;
+  color: white;
+  border-color: rgba(0, 0, 0, 0.308);
+  border-radius: 1px;
+  box-shadow: 1px 0.5px 0px black;
+  text-shadow: 1px 0.5px 0px black;
+  margin-left: 8%;
+  border-radius: 5px;
+}
+
+.carousel-div {
+  z-index: -1;
+  position: fixed;
+  top: 43%;
+  left: 5%;
+  right: 5%;
+
+  width: 90%;
+}
+
+.baremenubas {
+  position: fixed;
+
+  width: 100%;
+  top: 90%;
+}

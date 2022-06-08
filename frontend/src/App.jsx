@@ -3,6 +3,8 @@ import { useState } from "react";
 import WalletConnexion from "@pages/Walletconnexion";
 import Wallet from "@pages/Wallet";
 import Administration from "@pages/Administration";
+import FlypDecrib from "@components/FlypDecrib";
+import FlypCard from "@components/FlypCard";
 import Top from "@pages/Top";
 import Project from "@pages/Project";
 import BaseLayout from "./layout/BaseLayout";
@@ -14,7 +16,7 @@ function App() {
   const [login, setlog] = useState("");
   const [pass, setPass] = useState("");
   return (
-    <div className="App bg-zinc-400">
+    <div>
       <Routes>
         <Route path="/" element={<BaseLayout />}>
           <Route
@@ -31,6 +33,8 @@ function App() {
           <Route path="/wallet" element={<Wallet />} />
           <Route path="/project" element={<Project />} />
           <Route path="/top" element={<Top />} />
+          <Route path="describ" element={<FlypDecrib />} />
+          <Route path="flypcard" element={<FlypCard />} />
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>

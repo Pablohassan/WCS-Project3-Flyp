@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "setup": "npm i && husky install && npm --prefix ./frontend i && npm --prefix ./backend i",
+    "setup": "npm i && husky install && npm --prefix ./frontend i --force && npm --prefix ./backend i --force",
     "dev": "concurrently -n front,back -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm --prefix ./frontend run dev\" \"npm --prefix ./backend run dev\"",
     "dev-front": "npm --prefix ./frontend run dev",
     "dev-back": "npm --prefix ./backend run dev",
@@ -25,6 +25,9 @@
     "joi": "^17.6.0",
     "node-pre-gyp": "^0.17.0",
     "nodemon": "^2.0.16",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "react-spring": "^9.4.5",
+    "react-spring-carousel": "^2.0.19",
+    "uuid": "^8.3.2"
   }
 }

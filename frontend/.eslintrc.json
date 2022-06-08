@@ -37,7 +37,9 @@
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "react/jsx-one-expression-per-line": "off",
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "react/prop-types": "off",
+    "react/destructuring-assignment": "off"
   },
   "settings": {
     "import/resolver": {

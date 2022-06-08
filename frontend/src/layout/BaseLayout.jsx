@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 export default function BaseLayout() {
   return (
-    <div className="h-screen bg-gray-400">
+    <div className="">
       <Outlet />
     </div>
   );

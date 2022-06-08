@@ -1,0 +1,70 @@
+ul {
+  list-style: none;
+}
+
+.carousselWallet {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  font-family: Arial;
+}
+
+.carousselList {
+  display: flex;
+  list-style: none;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  justify-content: center;
+  perspective: 300px;
+}
+
+.carousselItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0px;
+  width: 150px;
+  height: 250px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.5);
+  position: absolute;
+  transition: all 0.3s ease-in;
+}
+
+.carousselItem:nth-child(1) {
+  background: linear-gradient(45deg, #2d35eb 0%, #904ed4 100%);
+}
+
+.carousselItem:nth-child(2) {
+  background: linear-gradient(45deg, #2d35eb 0%, #fdbb2d 100%);
+}
+
+.carousselItem:nth-child(3) {
+  background: linear-gradient(45deg, #2d35eb 0%, #22c1c3 100%);
+}
+.carousselItem:nth-child(4) {
+  background: linear-gradient(45deg, #2d35eb 0%, #22c1c3 100%);
+}
+
+.carousselItem[data-pos="0"] {
+  z-index: 5;
+}
+
+.carousselItem[data-pos="-1"],
+.carousselItem[data-pos="1"] {
+  opacity: 0.7;
+  filter: blur(1px) grayscale(10%);
+}
+
+.carousselItem[data-pos="-1"] {
+  transform: translateX(-40%) scale(0.9);
+  z-index: 4;
+}
+
+.carousselItem[data-pos="1"] {
+  transform: translateX(40%) scale(0.9);
+  z-index: 4;
+}
