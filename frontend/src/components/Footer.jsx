@@ -1,13 +1,21 @@
 import "../css/Footer.css";
 import "../css/SearchBar.css";
 
-export default function Footer({ onToggleSearch }) {
+export default function Footer({ onToggleSearch, onclickTrue, onclickFalse }) {
   return (
     <div className="footerContainer">
-      <button type="button" className="footerButton bg-red-500">
+      <button
+        onClick={onclickFalse}
+        type="button"
+        className="footerButton bg-red-500"
+      >
         Caroussel
       </button>
-      <button type="button" className="footerButton bg-red-500">
+      <button
+        onClick={onclickTrue}
+        type="button"
+        className="footerButton bg-red-500"
+      >
         Liste
       </button>
       <button id="search-toggle" type="button" onClick={onToggleSearch}>

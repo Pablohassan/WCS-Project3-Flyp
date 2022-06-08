@@ -86,7 +86,11 @@ export default function Wallet() {
       {showCardList && <CardList />}
 
       {isMobile && (
-        <Footer onToggleSearch={() => setShowSearchBar(!showSearchBar)} />
+        <Footer
+          onclickTrue={() => setShowCardList(true)}
+          onclickFalse={() => setShowCardList(false)}
+          onToggleSearch={() => setShowSearchBar(!showSearchBar)}
+        />
       )}
     </div>
   );

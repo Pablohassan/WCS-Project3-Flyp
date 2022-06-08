@@ -1,4 +1,5 @@
 // import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../css/SignIn.css";
 import bgImage from "@assets/images/franckOcean.jpg";
 
@@ -51,9 +52,14 @@ export default function SignIn() {
               </div>
             </div>
           </div>
-          <button type="button" className="loginBoxButton">
-            Connect to your account
-          </button>
+          <Link to="/Wallet">
+            <button
+              type="button"
+              className="loginBoxButton focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-red-700 border rounded hover:bg-red-600 py-4 w-full"
+            >
+              Connect to your account
+            </button>
+          </Link>
         </form>
       </div>
     </div>

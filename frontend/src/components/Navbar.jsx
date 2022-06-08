@@ -39,11 +39,13 @@ export default function Navbar() {
           </div>
           <div className="hidden md:flex items-center space-x-3 ">
             <p className="py-2 px-2 font-medium">Marc Hazime</p>
-            <img
-              alt=""
-              className="rounded-full  h-20 w-20 mr-2"
-              src=".\src\assets\ProfilPic.jpg"
-            />
+            <Link to="/profile">
+              <img
+                alt=""
+                className="rounded-full  h-20 w-20 mr-2"
+                src=".\src\assets\ProfilPic.jpg"
+              />
+            </Link>
           </div>
           <div className="md:hidden flex items-center">
             <Burger />
