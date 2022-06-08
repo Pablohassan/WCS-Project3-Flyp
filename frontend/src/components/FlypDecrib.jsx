@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../css/flydescrib.css";
+import "../css/FlypDescrib.css";
 
 export default function FlypDecrib() {
   return (

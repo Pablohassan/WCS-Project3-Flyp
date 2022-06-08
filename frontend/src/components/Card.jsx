@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { useSpring, animated } from "react-spring";
-import Styles from "./Card.module.css";
+import Styles from "../css/FlypCard.css";
 
 function Card({ imagen, linkto }) {
   const [show, setShown] = useState(false);

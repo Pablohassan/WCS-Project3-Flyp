@@ -8,12 +8,14 @@ import Navbar from "@components/Navbar";
 import SearchBar from "@components/SearchBar";
 import Footer from "@components/Footer";
 import "../css/Wallet.css";
-
+import CardList from "@components/CardList";
 import imgflyp from "../assets/images/blond.png";
 
 export default function Wallet() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const [showSearchBar, setShowSearchBar] = useState(!isMobile);
+  const [showCardList, setShowCardList] = useState(false);
+
   const cards = [
     {
       key: uuidv4(),
@@ -53,10 +55,23 @@ export default function Wallet() {
     <div>
       <Navbar />
 
-      {((isMobile && showSearchBar) || !isMobile) && <SearchBar />}
+      {((isMobile && showSearchBar) || !isMobile) && (
+        <div className="searchBarDesktop">
+          {!isMobile && (
+            <button
+              type="button"
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold px-4 rounded-l-full h-full"
+              onClick={() => setShowCardList(!showCardList)}
+            >
+              CardList
+            </button>
+          )}
+          <SearchBar mobile={isMobile} />{" "}
+        </div>
+      )}
 
-      <header className="header-wallet" />
-      <div className="">
+      {/* <header className="header-wallet" /> */}
+      {!showCardList && (
         <div className="carousel-div">
           <CarousselFly
             cards={cards}
@@ -67,20 +82,12 @@ export default function Wallet() {
             showArrows={false}
           />
         </div>
-        <div className="baremenubas">
-          {isMobile && (
-            <Footer onToggleSearch={() => setShowSearchBar(!showSearchBar)} />
-          )}
-          <section className="section2-wallet">
-            <div className="menu-bas1">
-              <h3>Caroussel</h3>
-            </div>
-            <div className="menu-bas2">
-              <h3>Liste</h3>
-            </div>
-          </section>
-        </div>
-      </div>
+      )}
+      {showCardList && <CardList />}
+
+      {isMobile && (
+        <Footer onToggleSearch={() => setShowSearchBar(!showSearchBar)} />
+      )}
     </div>
   );
 }

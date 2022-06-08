@@ -1,19 +1,13 @@
 .searchBarBox {
-  @apply relative rounded-full w-4/5 bg-white shadow-xl border border-slate-400 mx-auto my-4;
-  max-height: 40px;
-
-  width: 80%;
+  @apply relative w-2/5 bg-white shadow-xl border border-slate-400 h-full;
 }
 
 .searchBarContainer {
-  @apply container mx-auto py-4 text-black;
-  padding: 0;
-  width: 90%;
+  @apply container mx-auto py-1 text-black;
 }
 
 .searchBarInput {
-  @apply w-full rounded-full text-gray-800 transition focus:outline-none focus:border-transparent p-2 leading-normal text-xl lg:text-2xl;
-  max-height: 32px;
+  @apply w-full rounded-full text-gray-800 transition focus:outline-none focus:border-transparent p-2 leading-normal text-lg lg:text-xl;
 }
 
 .searchButton {
@@ -22,4 +16,13 @@
 
 .searchIcon {
   @apply fill-current text-gray-900 w-4 h-4;
+}
+
+.isTrue {
+  border-radius: 50px;
+}
+
+.isFalse {
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px;
 }

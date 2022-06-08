@@ -4,18 +4,13 @@ import "../css/SearchBar.css";
 export default function Footer({ onToggleSearch }) {
   return (
     <div className="footerContainer">
-      <button type="button" className="footerButton">
+      <button type="button" className="footerButton bg-red-500">
         Caroussel
       </button>
-      <button type="button" className="footerButton">
+      <button type="button" className="footerButton bg-red-500">
         Liste
       </button>
-      <button
-        id="search-toggle"
-        className="footerButton"
-        type="button"
-        onClick={onToggleSearch}
-      >
+      <button id="search-toggle" type="button" onClick={onToggleSearch}>
         <svg
           className="searchIcon"
           xmlns="http://www.w3.org/2000/svg"

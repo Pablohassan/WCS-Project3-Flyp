@@ -51,11 +51,9 @@ export default function SignIn() {
               </div>
             </div>
           </div>
-          <div className="mt-8">
-            <button type="button" className="loginBoxButton">
-              Connect to your account
-            </button>
-          </div>
+          <button type="button" className="loginBoxButton">
+            Connect to your account
+          </button>
         </form>
       </div>
     </div>

@@ -1,13 +1,11 @@
 .footerContainer {
-  @apply absolute bottom-0 right-0 left-0 flex justify-around items-center;
-  transform: translateY(-100px);
+  @apply fixed bottom-0 right-0 left-0 flex justify-around items-center;
 }
 
 .footerButton {
-  @apply my-4 p-3 w-1/4 font-medium text-white bg-red-500 rounded hover:bg-red-900 transition duration-300 cursor-pointer;
-  transform: translate(25px, 165px);
+  @apply my-4 p-3 w-1/4 font-medium text-white rounded hover:bg-red-900 transition duration-300 cursor-pointer;
 }
 
-.searchIcon {
-  transform: translate();
+#search-toggle {
+  @apply flex justify-center items-center border border-gray-500 rounded-full h-10 w-10;
 }
