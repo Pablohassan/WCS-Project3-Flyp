@@ -80,3 +80,7 @@
   width: 100%;
   top: 90%;
 }
+
+body {
+  overscroll-behavior: contain;
+}
