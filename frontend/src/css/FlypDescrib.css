@@ -2,18 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin-left: 100px;
   min-height: 360px;
+  min-width: 500px;
 }
 .dropdownclosed {
   display: flex;
   display: none;
-
+  transform: translateX(100px);
   justify-content: center;
   align-items: center;
 }
 
 .dropdownopen {
+  margin-top: 100px;
   z-index: -1;
   -webkit-animation: dropdownopen 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1 both;
   animation: dropdownopen 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1 both;
@@ -25,13 +27,13 @@
     opacity: 0;
   }
   50% {
-    -webkit-transform: translateY(-200px);
-    transform: translateY(-200px);
-    opacity: 0;
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+    opacity: 1;
   }
   100% {
-    -webkit-transform: translateY(0px);
-    transform: translateY(-100 px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
     opacity: 1;
   }
 }
@@ -42,13 +44,13 @@
     opacity: 0;
   }
   50% {
-    -webkit-transform: translateY(-200px);
-    transform: translateY(-200px);
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-15px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0px);
-    transform: translateY(-100px);
+    transform: translateY(-15px);
     opacity: 1;
   }
 }
@@ -77,43 +79,41 @@
 @keyframes dropdownclosed {
   0% {
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+    transform: translateY(100);
   }
   100% {
     -webkit-transform: translateY(-100px);
-    transform: translateY(-100px);
+    transform: translateY(100px);
   }
 }
 @-webkit-keyframes flycard {
   0% {
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+    transform: translateY(100);
   }
   100% {
-    -webkit-transform: translateY(-100px);
-    transform: translateY(-100px);
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
   }
 }
 @keyframes flycard {
   0% {
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+    transform: translateY(-100);
   }
   100% {
-    -webkit-transform: translateY(-100px);
+    -webkit-transform: translateY(100px);
     transform: translateY(-100px);
   }
 }
 .bgfrank {
   z-index: -1;
-  width: 95%;
-  max-width: 95%;
-  min-width: 50px;
-  max-height: 520px;
-  height: 90vh;
+  width: 100%;
+  min-height: 600px;
+  font-size: 20px;
   margin: 12px;
-  padding: 0;
-  margin: 0;
+  padding: 15px;
+  margin-left: 50%;
   image-rendering: optimizeSpeed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -123,11 +123,12 @@
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
 
-  /* @apply bg-[url('../assets/images/frank-ocean-bgt.jpeg')]; */
+  /* @apply bg-[url('../assets/images/frank-ocean-bgt.jpeg')];  */
 }
 .container-desc {
   z-index: -1;
-  margin: 5%;
+  margin: 1%;
+  min-width: 100vw;
 }
 .Flypdescib {
   border-radius: 20px;
@@ -147,7 +148,7 @@
   font-size: 2.2em;
 }
 .desc-flyp {
-  font-size: 1.6em;
+  font-size: 1.5em;
 }
 .cardfocusclosed {
   z-index: 2;
@@ -159,6 +160,12 @@
 }
 
 .cardfocusopen {
-  margin-top: 30%;
+  min-width: 74%;
+  margin-top: 40%;
   z-index: 2;
+  margin-left: 41%;
+  padding-bottom: 4%;
+}
+.flycard {
+  font-size: 20px;
 }

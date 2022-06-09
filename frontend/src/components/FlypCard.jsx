@@ -18,17 +18,15 @@ export default function flypCard() {
 
   return (
     <div>
-      <section
-        className={`cardfocus${isOpen ? "open w-full" : "closed w-full"}`}
-      >
-        <div className="flycard w-[95%] h-[250px] mx-auto cursor-pointer group perspective">
+      <section className={`cardfocus${isOpen ? "open " : "closed w-full"}`}>
+        <div className="flycard w-[100%] h-[250px] mx-auto cursor-pointer group perspective">
           <div />
           <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
-            <div className="absolute backface-hidden rounded-xl border-2 w-full h-full">
+            <div className="absolute backface-hidden rounded-xl border-2 w-full h-100">
               <img
                 src={imgflyp}
                 alt="projet-blond"
-                className=" rounded-xl w-full h-full"
+                className=" rounded-xl w-full "
               />
             </div>
             <div className="absolute my-rotate-y-180 rounded-xl backface-hidden w-full h-full bg-gray-100 overflow-hidden">
@@ -43,7 +41,7 @@ export default function flypCard() {
                 <button
                   onClick={() => setIsOpen((prev) => !prev)}
                   type="button"
-                  className="bg-teal-500 translate-y-16 px-6 py-2 font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-20 scale-0 group-hover:scale-125"
+                  className="bg-teal-500 translate-y-16 px-4 py-2 font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-20 scale-0 group-hover:scale-125"
                 >
                   test
                 </button>

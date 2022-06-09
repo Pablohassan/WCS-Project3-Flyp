@@ -1,12 +1,12 @@
 import React from "react";
+
 // eslint-disable-next-line
 import styled from "@emotion/styled";
 import Slide from "./Slide";
 
 const Wrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-item: center;
+  width: 100%;
 `;
 
 const NavigationButtons = styled.div`
@@ -99,6 +99,7 @@ class VerticalCarousel extends React.Component {
       animationConfig,
       offsetRadius,
       showNavigation,
+
       orientation = "vertical",
     } = this.props;
 
@@ -126,6 +127,7 @@ class VerticalCarousel extends React.Component {
             />
           ))}
         </Wrapper>
+
         {navigationButtons}
       </>
     );

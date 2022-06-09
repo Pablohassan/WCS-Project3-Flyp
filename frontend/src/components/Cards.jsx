@@ -11,108 +11,85 @@ const slides = [
   },
   {
     key: 1,
-    content: (
-      <img
-        style={{ width: "100%", height: "auto" }}
-        src="https://f.hubspotusercontent00.net/hubfs/8852505/2.png"
-        alt="card"
-      />
-    ),
+    content: <FlypCard />,
   },
   {
     key: 2,
-    content: (
-      <img
-        style={{ width: "100%", height: "auto" }}
-        src="https://f.hubspotusercontent00.net/hubfs/8852505/3.png"
-        alt="card"
-      />
-    ),
+    content: <FlypCard />,
   },
   {
     key: 3,
-    content: (
-      <img
-        style={{ width: "100%", height: "auto" }}
-        src="https://f.hubspotusercontent00.net/hubfs/8852505/4.png"
-        alt="card"
-      />
-    ),
+    content: <FlypCard />,
   },
   {
     key: 4,
-    content: (
-      <img
-        style={{ width: "100%", height: "auto" }}
-        src="https://f.hubspotusercontent00.net/hubfs/8852505/5.png"
-        alt="card"
-      />
-    ),
+
+    content: <FlypCard />,
   },
   {
     key: 5,
-    content: (
-      <img
-        style={{ width: "100%", height: "auto" }}
-        src="https://f.hubspotusercontent00.net/hubfs/8852505/6.png"
-        alt="card"
-      />
-    ),
+    content: <FlypCard />,
   },
   {
     key: 6,
-    content: (
-      <img
-        style={{ width: "100%", height: "auto" }}
-        src="https://f.hubspotusercontent00.net/hubfs/8852505/7.png"
-        alt="card"
-      />
-    ),
+    content: <FlypCard />,
   },
-  {
-    key: 7,
-    content: (
-      <img
-        style={{ width: "100%", height: "auto" }}
-        src="https://f.hubspotusercontent00.net/hubfs/8852505/1.png"
-        alt="card"
-      />
-    ),
-  },
-  {
-    key: 8,
-    content: (
-      <img
-        style={{ width: "100%", height: "auto" }}
-        src="https://f.hubspotusercontent00.net/hubfs/8852505/4.png"
-        alt="card"
-      />
-    ),
-  },
+  // {
+  //   key: 7,
+  //   content: (
+  //     <FlypCard
+
+  //     />
+  //   ),
+  // },
+  // {
+  //   key: 8,
+  //   content: (
+  //     <img
+  //       style={{ width: "100%", height: "auto" }}
+  //       src="https://f.hubspotusercontent00.net/hubfs/8852505/4.png"
+  //       alt="card"
+  //     />
+  //   ),
+  // },
 ];
 
 const verticalStyle = {
   display: "flex",
-  justifyContent: "center",
+  justifyContent: "flex-start",
   alignItems: "center",
   width: "90vw",
-  height: "50vh",
+  marginLeft: "8%",
+  marginTop: "-50px",
+  fontsize: "10px",
+  background: "transparent",
 };
 
 const horizontalStyle = {
   ...verticalStyle,
   transform: "rotate(90deg)",
+  marginTop: "40%",
+  marginLeft: "100px",
+  fontsize: "10px",
 };
 
 export default class Cards extends Component {
   constructor(props) {
     super(props);
+    this.state = { isToggleOn: true };
+    this.handleClick = this.handleClick.bind(this);
 
     this.state = {
       offsetRadius: 4,
       showNavigation: false,
-      config: config.gentle,
+      config: config.slow,
     };
+  }
+
+  handleClick() {
+    this.setState((prevState) => ({
+      isToggleOn: !prevState.isToggleOn,
+    }));
   }
 
   render() {
@@ -125,6 +102,7 @@ export default class Cards extends Component {
         }
       >
         <VerticalCarousel
+          onClick={this.handleClick}
           slides={slides}
           offsetRadius={this.state.offsetRadius}
           showNavigation={this.state.showNavigation}

@@ -17,8 +17,8 @@ const SlideContainer = styled.div`
 const SlideCard = styled.div`
   position: relative;
   width: 300px;
-  height: 185px;
-  background: white;
+  height: 175px;
+
   font-size: 35px;
   display: flex;
   align-items: center;
@@ -30,50 +30,41 @@ const SlideCard = styled.div`
 `;
 
 const styles = {
-  0: {
-    transform: "translateX(0%) translateY(-200%) scale(0.8)",
-    top: "22%",
-    opacity: 0,
-  },
   1: {
-    transform: "translateX(0%) translateY(-150%) scale(0.85)",
-    top: "42%",
-    opacity: 0.85,
+    transform: "translateX(-30%) translateY(-110%) scale(0.5)",
+    top: "40%",
+    opacity: 0.5,
   },
+
   2: {
-    transform: "translateX(0%) translateY(-100%) scale(0.9)",
+    transform: "translateX(-45%) translateY(-100%) scale(0.8)",
     top: "44%",
-    opacity: 0.9,
+    opacity: 0.7,
   },
   3: {
-    transform: "translateX(0%) translateY(-50%) scale(0.95)",
+    transform: "translateX(-50%) translateY(-50%) scale(0.9)",
     top: "47%",
-    opacity: 0.95,
+    opacity: 1,
   },
   4: {
-    transform: "translateX(0%) translateY(0%) scale(1)",
+    transform: "translateX(-55%) translateY(0%) scale(1)",
     top: "50%",
     opacity: 1,
   },
   5: {
-    transform: "translateX(0%) translateY(50%) scale(0.95)",
+    transform: "translateX(-50%) translateY(50%) scale(0.9)",
     top: "51%",
-    opacity: 0.95,
+    opacity: 1,
   },
   6: {
-    transform: "translateX(0%) translateY(100%) scale(0.9)",
+    transform: "translateX(-45%) translateY(80%) scale(0.8)",
     top: "52%",
-    opacity: 0.9,
+    opacity: 0.7,
   },
   7: {
-    transform: "translateX(0%) translateY(150%) scale(0.85)",
-    top: "52.5%",
-    opacity: 0.85,
-  },
-  8: {
-    transform: "translateX(0%) translateY(200%) scale(0.8)",
-    top: "74%",
-    opacity: 0,
+    transform: "translateX(-38%) translateY(-190%) scale(0.5)",
+    top: "35%",
+    opacity: 0.5,
   },
 };
 
