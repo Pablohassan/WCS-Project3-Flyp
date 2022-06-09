@@ -43,7 +43,7 @@ export default function Burger() {
             </button>
 
             <ul className="MENU-LINK-MOBILE-OPEN flex flex-col justify-center items-center justify-between min-h-[250px] w-full ">
-              <li className=" flex justify-center border-b border-gray-400 my-8 uppercase hover:bg-gray-600/50 w-full my-0 h-20">
+              <li className=" flex justify-center border-b border-gray-400 my-8 uppercase hover:bg-gray-600/50 w-full my-0 h-20 active:bg-gray-600/50">
                 <Link
                   className="w-full items-center flex justify-center"
                   to="/wallet"
@@ -52,7 +52,7 @@ export default function Burger() {
                   Wallet
                 </Link>
               </li>
-              <li className="flex justify-center border-b border-gray-400 my-8 uppercase hover:bg-gray-600/50 w-full my-0 h-20">
+              <li className="flex justify-center border-b border-gray-400 my-8 uppercase hover:bg-gray-600/50 w-full my-0 h-20 active:bg-gray-600/50">
                 <Link
                   className=" w-full flex items-center justify-center "
                   to="/project"
@@ -61,7 +61,7 @@ export default function Burger() {
                   Projet
                 </Link>
               </li>
-              <li className="flex justify-center  border-b border-gray-400 my-8 uppercase hover:bg-gray-600/50 w-full my-0 h-20">
+              <li className="flex justify-center  border-b border-gray-400 my-8 uppercase hover:bg-gray-600/50 w-full my-0 h-20 active:bg-gray-600/50">
                 <Link
                   className="w-full flex items-center justify-center"
                   to="/top"

@@ -10,7 +10,7 @@ export default function Navbar() {
             <div>
               <Link to="/" className="flex items-center py-4 px-0">
                 <img
-                  src=".\src\assets\FLY. Logo.png"
+                  src=".\src\assets\Logofly.png"
                   alt="Logo"
                   className="h-20 w-20 mr-2"
                 />

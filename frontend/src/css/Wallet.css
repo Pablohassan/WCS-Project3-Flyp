@@ -61,7 +61,7 @@
   border-radius: 5px;
 }
 .searchBarDesktop {
-  @apply flex justify-center items-center my-5;
+  @apply flex justify-center  my-5;
 }
 
 .carousel-div {

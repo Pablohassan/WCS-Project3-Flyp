@@ -11,6 +11,14 @@ export default function Wallet() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const [showSearchBar, setShowSearchBar] = useState(!isMobile);
   const [showCardList, setShowCardList] = useState(false);
+  const [cardListButtonName, setCardListButtonName] = useState(false);
+
+  function switchListToCaroussel() {
+    setCardListButtonName(!cardListButtonName);
+  }
+  function cardListShow() {
+    setShowCardList(!showCardList);
+  }
 
   return (
     <div>
@@ -21,10 +29,14 @@ export default function Wallet() {
           {!isMobile && (
             <button
               type="button"
-              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold px-4 rounded-l-full h-full"
-              onClick={() => setShowCardList(!showCardList)}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold px-4 rounded-l-full h-1,75"
+              onClick={() => {
+                switchListToCaroussel();
+                cardListShow();
+              }}
             >
-              CardList
+              {cardListButtonName && <p>Caroussel</p>}
+              {!cardListButtonName && <p>CardList</p>}
             </button>
           )}
           <SearchBar mobile={isMobile} />{" "}
