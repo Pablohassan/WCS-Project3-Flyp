@@ -47,14 +47,12 @@ export default function Wallet() {
       {!showCardList && (
         <div className="carousel-div">
           <div className="App">
-            <div className="exemplecss translate-x-16">
-              <div className="md:hidden">
-                <Cards orientation="vertical" />
-              </div>
+            <div className="md:hidden">
+              <Cards orientation="vertical" />
+            </div>
 
-              <div className="hidden md:block">
-                <Cards orientation="horizontal" />
-              </div>
+            <div className="hidden md:block">
+              <Cards orientation="horizontal" />
             </div>
           </div>
         </div>

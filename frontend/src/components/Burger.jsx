@@ -70,6 +70,15 @@ export default function Burger() {
                   Top
                 </Link>
               </li>
+              <li className="flex justify-center  border-b border-gray-400 my-8 uppercase hover:bg-gray-600/50 w-full my-0 h-20">
+                <Link
+                  className="w-full flex items-center justify-center"
+                  alt=""
+                  to="/"
+                >
+                  Deconnexion
+                </Link>
+              </li>
               <li>
                 <img
                   className="rounded-full  h-20 w-20 mr-2 mt-5"
@@ -90,6 +99,9 @@ export default function Burger() {
           </li>
           <li>
             <Link to="/top">Top</Link>
+          </li>
+          <li>
+            <Link to="/">Deconnexion</Link>
           </li>
         </ul>
       </nav>

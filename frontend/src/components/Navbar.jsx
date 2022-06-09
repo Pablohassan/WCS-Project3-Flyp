@@ -46,6 +46,17 @@ export default function Navbar() {
                 src=".\src\assets\ProfilPic.jpg"
               />
             </Link>
+
+            <div>
+              <Link to="/">
+                <img
+                  className="disconnectBtn h-10 w-10 mr-2"
+                  src=".\src\assets\disconnect.png"
+                  alt=""
+                  type="button"
+                />
+              </Link>
+            </div>
           </div>
           <div className="md:hidden flex items-center">
             <Burger />

@@ -2,17 +2,12 @@ import React, { Component } from "react";
 // eslint-disable-next-line
 import { config } from "react-spring";
 import VerticalCarousel from "./VerticalCarousel";
+import FlypCard from "./FlypCard";
 
 const slides = [
   {
     key: 0,
-    content: (
-      <img
-        style={{ width: "100%", height: "auto" }}
-        src="https://f.hubspotusercontent00.net/hubfs/8852505/1.png"
-        alt="card"
-      />
-    ),
+    content: <FlypCard />,
   },
   {
     key: 1,
@@ -97,14 +92,11 @@ const slides = [
 ];
 
 const verticalStyle = {
-  position: "fixed",
   display: "flex",
-  flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
   width: "90vw",
-  height: "90vh",
-  margin: "auto",
+  height: "50vh",
 };
 
 const horizontalStyle = {

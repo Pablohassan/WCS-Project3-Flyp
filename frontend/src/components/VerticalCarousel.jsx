@@ -4,11 +4,9 @@ import styled from "@emotion/styled";
 import Slide from "./Slide";
 
 const Wrapper = styled.div`
-  position: relative;
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 500px;
+  align-item: center;
 `;
 
 const NavigationButtons = styled.div`
