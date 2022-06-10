@@ -47,7 +47,7 @@ const styles = {
     opacity: 1,
   },
   4: {
-    transform: "translateX(-55%) translateY(0%) scale(1)",
+    transform: "translateX(-53%) translateY(0%) scale(0.95)",
     top: "50%",
     opacity: 1,
   },
@@ -57,7 +57,7 @@ const styles = {
     opacity: 1,
   },
   6: {
-    transform: "translateX(-45%) translateY(80%) scale(0.8)",
+    transform: "translateX(-45%) translateY(0%) scale(0.8)",
     top: "52%",
     opacity: 0.7,
   },
