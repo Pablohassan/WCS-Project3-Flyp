@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import imgflyp from "../assets/images/blond.png";
 
-export default function flypCard() {
+export default function flypCard({ imgflyp }) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {

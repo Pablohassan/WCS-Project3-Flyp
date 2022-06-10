@@ -1,5 +1,5 @@
 .footerContainer {
-  @apply fixed bottom-0 right-0 left-0 flex justify-around items-center;
+  @apply fixed bottom-0 right-0 left-0 flex justify-around items-center bg-neutral-50;
 }
 
 .footerButton {

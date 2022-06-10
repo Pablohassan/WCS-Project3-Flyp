@@ -48,10 +48,10 @@ export default function Wallet() {
               }}
             >
               {cardListButtonName && (
-                <img className="h-4 px-2" src={iconCarousel} alt="" />
+                <img className="h-4 px-2 mt-28" src={iconCarousel} alt="" />
               )}
               {!cardListButtonName && (
-                <img className="h-4 px-2 " src={iconList} alt="" />
+                <img className="h-4 px-2 mt-28 " src={iconList} alt="" />
               )}
             </button>
           )}
@@ -72,7 +72,11 @@ export default function Wallet() {
         </div>
       )}
       {showCardList && (
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 list-none">
+        <div
+          className={`mx-auto grid w-2/3 md:w-4/5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 list-none ${
+            showSearchBar ? `mt-0` : `mt-28`
+          }`}
+        >
           {simulatedDBArtists.map((artist) => (
             <li id={artist.id}>
               <CardList
