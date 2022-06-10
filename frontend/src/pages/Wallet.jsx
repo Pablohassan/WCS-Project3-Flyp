@@ -6,6 +6,9 @@ import Footer from "@components/Footer";
 import "../css/Wallet.css";
 import CardList from "@components/CardList";
 import Cards from "@components/Cards";
+import { simulatedDBArtists } from "@services/api";
+import iconCarousel from "../assets/images/carousel-icon.png";
+import iconList from "../assets/images/list.png";
 
 export default function Wallet() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -34,27 +37,27 @@ export default function Wallet() {
   return (
     <div>
       <Navbar />
-
       {((isMobile && showSearchBar) || !isMobile) && (
         <div className="searchBarDesktop">
           {!isMobile && (
             <button
               type="button"
-              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold px-4 rounded-l-full h-1,75"
               onClick={() => {
                 switchListToCaroussel();
                 cardListShow();
               }}
             >
-              {cardListButtonName && <p>Caroussel</p>}
-              {!cardListButtonName && <p>CardList</p>}
+              {cardListButtonName && (
+                <img className="h-4 px-2" src={iconCarousel} alt="" />
+              )}
+              {!cardListButtonName && (
+                <img className="h-4 px-2 " src={iconList} alt="" />
+              )}
             </button>
           )}
-          <SearchBar mobile={isMobile} />{" "}
+          <SearchBar />
         </div>
       )}
-
-      {/* <header className="header-wallet" /> */}
       {!showCardList && (
         <div className="carousel-div">
           <div className="App">
@@ -68,7 +71,19 @@ export default function Wallet() {
           </div>
         </div>
       )}
-      {showCardList && <CardList />}
+      {showCardList && (
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 list-none">
+          {simulatedDBArtists.map((artist) => (
+            <li id={artist.id}>
+              <CardList
+                img={artist.coverImage}
+                project={artist.project}
+                artist={artist.name}
+              />
+            </li>
+          ))}
+        </div>
+      )}
 
       {isMobile && (
         <Footer

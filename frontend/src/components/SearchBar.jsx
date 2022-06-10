@@ -1,13 +1,10 @@
 import "../css/SearchBar.css";
 import sendAnswerButton from "../assets/images/send.png";
 
-export default function SearchBar({ mobile }) {
+export default function SearchBar() {
   return (
-    <div
-      className={`searchBarBox ${mobile ? `rounded-full` : `rounded-r-full`}`}
-      id="search-content"
-    >
-      <div className={`searchBarContainer ${mobile ? `isTrue` : `isFalse`}`}>
+    <div className="searchBarBox" id="search-content">
+      <div className="searchBarContainer">
         <form action="">
           <input
             id="searchfield"
