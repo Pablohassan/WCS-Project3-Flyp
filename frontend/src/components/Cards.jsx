@@ -56,10 +56,10 @@ const slides = [
 
 const verticalStyle = {
   display: "flex",
-  justifyContent: "flex-start",
+  justifyContent: "space-around",
   alignItems: "center",
   width: "90vw",
-  marginLeft: "8%",
+
   marginTop: "-50px",
   fontsize: "10px",
   background: "transparent",

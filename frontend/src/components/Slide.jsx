@@ -31,18 +31,18 @@ const SlideCard = styled.div`
 
 const styles = {
   1: {
-    transform: "translateX(-30%) translateY(-110%) scale(0.5)",
+    transform: "translateX(-30%) translateY(-110%) scale(0.9)",
     top: "40%",
     opacity: 0.5,
   },
 
   2: {
-    transform: "translateX(-45%) translateY(-100%) scale(0.8)",
+    transform: "translateX(-45%) translateY(-100%) scale(1)",
     top: "44%",
     opacity: 0.7,
   },
   3: {
-    transform: "translateX(-50%) translateY(-50%) scale(0.9)",
+    transform: "translateX(-50%) translateY(-50%) scale(1.1)",
     top: "47%",
     opacity: 1,
   },
