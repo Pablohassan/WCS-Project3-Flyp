@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import Navbar from "@components/Navbar";
 import SearchBar from "@components/SearchBar";
@@ -6,7 +6,7 @@ import Footer from "@components/Footer";
 import "../css/Wallet.css";
 import CardList from "@components/CardList";
 import Cards from "@components/Cards";
-import { simulatedDBArtists } from "@services/api";
+import { getContenu } from "@services/api";
 import iconCarousel from "../assets/images/carousel-icon.png";
 import iconList from "../assets/images/list.png";
 
@@ -15,6 +15,16 @@ export default function Wallet() {
   const [showSearchBar, setShowSearchBar] = useState(!isMobile);
   const [showCardList, setShowCardList] = useState(false);
   const [cardListButtonName, setCardListButtonName] = useState(false);
+  const [newCardList, setNewCardList] = useState([]);
+
+  useEffect(() => {
+    const fetchContenu = async () => {
+      const dbArtists = await getContenu();
+      setNewCardList(dbArtists);
+    };
+
+    fetchContenu();
+  }, []);
 
   function switchListToCaroussel() {
     setCardListButtonName(!cardListButtonName);
@@ -22,17 +32,6 @@ export default function Wallet() {
   function cardListShow() {
     setShowCardList(!showCardList);
   }
-
-  // const [CardList, setCardList] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchCards = async () => {
-  //     const response = await axios("https://api.deezer.com");
-  //     setCardList(response.data);
-  //     console.log(response.data);
-  //   };
-  //   fetchCards();
-  // }, []);
 
   return (
     <div>
@@ -77,12 +76,12 @@ export default function Wallet() {
             showSearchBar ? `mt-0` : `mt-28`
           }`}
         >
-          {simulatedDBArtists.map((artist) => (
+          {newCardList.map((artist) => (
             <li id={artist.id}>
               <CardList
                 img={artist.coverImage}
-                project={artist.project}
-                artist={artist.name}
+                project={artist.flyp}
+                artist={artist.artist}
               />
             </li>
           ))}
