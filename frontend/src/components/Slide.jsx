@@ -7,64 +7,68 @@ import { withGesture } from "react-with-gesture";
 
 const SlideContainer = styled.div`
   position: absolute;
-  top: 50%;
+
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transform-origin: 50% 50%;
+  transform-origin: 65% 1%;
 `;
 
 const SlideCard = styled.div`
   position: relative;
   width: 300px;
   height: 175px;
-
   font-size: 35px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  transform-origin: 50% 50%;
+  transform-origin: 65% 150%;
   border-radius: 8px;
   transform: ${(props) =>
     props.orientation === "vertical" ? "rotate(0deg)" : "rotate(270deg)"};
 `;
 
 const styles = {
+  0: {
+    transform: "translateX(0%) translateY(-110%) scale(0.7)",
+    top: "50%",
+    opacity: 0.9,
+    zIndex: 1,
+  },
+
   1: {
-    transform: "translateX(-30%) translateY(-110%) scale(0.9)",
-    top: "40%",
-    opacity: 0.5,
+    transform: "translateX(0%) translateY(-95%) scale(0.8)",
+    top: "30%",
+    opacity: 0.8,
+    zIndex: 2,
   },
 
   2: {
-    transform: "translateX(-45%) translateY(-100%) scale(1)",
+    transform: "translateX(1%) translateY(-75%) scale(0.9)",
     top: "44%",
-    opacity: 0.7,
+    opacity: 0.9,
+    zIndex: 3,
   },
   3: {
-    transform: "translateX(-50%) translateY(-50%) scale(1.1)",
+    transform: "translateX(1%) translateY(-50%) scale(1)",
     top: "47%",
     opacity: 1,
+    zIndex: 4,
   },
   4: {
-    transform: "translateX(-53%) translateY(0%) scale(0.95)",
+    transform: "translateX(1%) translateY(-10%) scale(0.9)",
     top: "50%",
     opacity: 1,
+    zIndex: 4,
   },
   5: {
-    transform: "translateX(-50%) translateY(50%) scale(0.9)",
-    top: "51%",
+    transform: "translateX(0%) translateY(25%) scale(0.8)",
+    top: "50%",
     opacity: 1,
+    zIndex: 4,
   },
   6: {
-    transform: "translateX(-45%) translateY(0%) scale(0.8)",
-    top: "52%",
-    opacity: 0.7,
-  },
-  7: {
-    transform: "translateX(-38%) translateY(-190%) scale(0.5)",
-    top: "35%",
-    opacity: 0.5,
+    transform: "translateX(0%) translateY(55%) scale(0.7)",
+    top: "50%",
+    opacity: 0.9,
+    zIndex: 5,
   },
 };
 

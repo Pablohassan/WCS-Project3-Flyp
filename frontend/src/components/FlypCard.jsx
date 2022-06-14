@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import imgflyp from "@assets/images/blond.png";
 
-export default function flypCard({ imgflyp }) {
+export default function flypCard() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -16,19 +17,19 @@ export default function flypCard({ imgflyp }) {
   }, []);
 
   return (
-    <div>
+    <div className="container-wallet">
       <section className={`cardfocus${isOpen ? "open " : "closed w-full"}`}>
-        <div className="flycard w-[100%] h-[250px] mx-auto cursor-pointer group perspective">
+        <div className="flycard w-[100%] h-[250px]  cursor-pointer group perspective">
           <div />
-          <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000">
-            <div className="absolute backface-hidden rounded-xl border-2 w-full h-100">
+          <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full delay-1000 duration-1000">
+            <div className="absolute backface-hidden rounded-xl border-1 w-full h-100">
               <img
                 src={imgflyp}
                 alt="projet-blond"
                 className=" rounded-xl w-full "
               />
             </div>
-            <div className="absolute my-rotate-y-180 rounded-xl backface-hidden w-full h-full bg-gray-100 overflow-hidden">
+            <div className="absolute my-rotate-y-180 rounded-xl backface-hidden translate-x-' w-full bg-gray-100 overflow-hidden">
               <div className="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-24">
                 <h1 className="text-2xl translate-y-4 font-semibold">BLOND</h1>
                 <p className="my-2 translate-y-6">Projet</p>

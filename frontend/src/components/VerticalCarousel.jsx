@@ -34,7 +34,6 @@ function mod(a, b) {
 class VerticalCarousel extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       index: 0,
     };

@@ -36,7 +36,7 @@ export default function Wallet() {
   }
 
   return (
-    <div>
+    <div className="Wallet-main">
       <Navbar />
       {((isMobile && showSearchBar) || !isMobile) && (
         <div className="searchBarDesktop">

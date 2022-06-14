@@ -34,33 +34,15 @@ const slides = [
     key: 6,
     content: <FlypCard />,
   },
-  // {
-  //   key: 7,
-  //   content: (
-  //     <FlypCard
-
-  //     />
-  //   ),
-  // },
-  // {
-  //   key: 8,
-  //   content: (
-  //     <img
-  //       style={{ width: "100%", height: "auto" }}
-  //       src="https://f.hubspotusercontent00.net/hubfs/8852505/4.png"
-  //       alt="card"
-  //     />
-  //   ),
-  // },
+  {
+    key: 7,
+    content: <FlypCard />,
+  },
 ];
 
 const verticalStyle = {
-  display: "flex",
-  justifyContent: "space-around",
-  alignItems: "center",
   width: "90vw",
 
-  marginTop: "-50px",
   fontsize: "10px",
   background: "transparent",
 };
@@ -68,8 +50,7 @@ const verticalStyle = {
 const horizontalStyle = {
   ...verticalStyle,
   transform: "rotate(90deg)",
-  marginTop: "40%",
-  marginLeft: "100px",
+
   fontsize: "10px",
 };
 
@@ -82,7 +63,7 @@ export default class Cards extends Component {
     this.state = {
       offsetRadius: 4,
       showNavigation: false,
-      config: config.slow,
+      config: config.molasses,
     };
   }
 
