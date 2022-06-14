@@ -13,7 +13,7 @@ export default function SearchBar() {
           />
           <button
             type="button"
-            className="absolute top-0 right-0 mt-3 mr-3 flex flex-shrink-0 focus:outline-none block text-red-300 hover:text-amber-600 w-6 h-6 opacity-30"
+            className="absolute top-0 right-0 mt-3 mr-2 flex flex-shrink-0 focus:outline-none block text-red-300 hover:text-amber-600 w-4 h-4 opacity-30"
           >
             <img
               src={sendAnswerButton}

@@ -4,7 +4,7 @@ import Burger from "./Burger";
 export default function Navbar() {
   return (
     <nav className="bg-neutral-50 shadow-lg fixed top-0 right-0 left-0 z-20">
-      <div className="max-w-none mx-auto px-4 h-50 ">
+      <div className="max-w-none mx-auto px-4 h-22 ">
         <div className="flex justify-between ">
           <div className="flex space-x-7 ">
             <div>
@@ -12,7 +12,7 @@ export default function Navbar() {
                 <img
                   src=".\src\assets\Logofly.png"
                   alt="Logo"
-                  className="h-20 w-20 mr-2"
+                  className="h-14 w-14 mr-2"
                 />
               </Link>
             </div>

@@ -38,6 +38,24 @@ const slides = [
     key: 7,
     content: <FlypCard />,
   },
+  // {
+  //   key: 7,
+  //   content: (
+  //     <FlypCard
+
+  //     />
+  //   ),
+  // },
+  // {
+  //   key: 8,
+  //   content: (
+  //     <img
+  //       style={{ width: "100%", height: "auto" }}
+  //       src="https://f.hubspotusercontent00.net/hubfs/8852505/4.png"
+  //       alt="card"
+  //     />
+  //   ),
+  // },
 ];
 
 const verticalStyle = {
@@ -50,7 +68,6 @@ const verticalStyle = {
 const horizontalStyle = {
   ...verticalStyle,
   transform: "rotate(90deg)",
-
   fontsize: "10px",
 };
 

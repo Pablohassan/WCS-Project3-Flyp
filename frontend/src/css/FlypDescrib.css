@@ -12,7 +12,7 @@
     display: none;
     transform: translateX(100px);
     justify-content: center;
-    align-items: center; 
+    align-items: center;
   }
 
   .dropdownopen {
@@ -171,14 +171,13 @@
     margin-left: 180px;
   }
   .flycard {
-
     display: flex;
     justify-content: center;
- flex-direction:row;
+    flex-direction: row;
     min-width: 30vw;
     margin-top: 100%;
     font-size: 15px;
-  margin-left: 20%;
+    margin-left: 20%;
   }
 }
 
@@ -555,7 +554,6 @@
     z-index: 20;
 
     top: 25%;
-    margin: auto;
   }
 
   .cardfocusopen {
@@ -567,7 +565,6 @@
     margin-bottom: -50px;
   }
   .flycard {
-    margin-top: 70px;
     display: flex;
     font-size: 15px;
     /* min-width: 110vW; */

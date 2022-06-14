@@ -62,8 +62,7 @@
 }
 .searchBarDesktop {
   @apply flex justify-center  my-5;
-  margin-bottom: -185px;
-
+  margin-bottom: -148px;
 }
 
 .carousel-div {
@@ -156,7 +155,7 @@
   .searchBarDesktop {
     @apply flex justify-center  my-5;
     z-index: -100;
-margin-bottom: -185px;
+    margin-bottom: -140px;
   }
 
   .carousel-div {
@@ -165,7 +164,7 @@ margin-bottom: -185px;
     /* margin-right: 1%;
     top: 35%; */
 
-    transform: translate(10px ,320px) scale(0.9);
+    transform: translate(10px, 320px) scale(0.9);
   }
 
   .baremenubas {
@@ -178,12 +177,12 @@ margin-bottom: -185px;
   .carousel-div {
     z-index: -1;
     margin-top: 10%;
-min-width: 100vw;
+    min-width: 100vw;
     display: flex;
     justify-content: flex-end;
     top: 35%;
-   margin-left: 15%;
- margin-top: auto;
+    margin-left: 15%;
+    margin-top: auto;
     width: 100%;
   }
 }
