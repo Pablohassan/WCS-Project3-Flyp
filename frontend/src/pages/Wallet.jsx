@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
+import { getContenu } from "@services/api";
+
 import Navbar from "@components/Navbar";
 import SearchBar from "@components/SearchBar";
 import Footer from "@components/Footer";
-import "../css/Wallet.css";
 import CardList from "@components/CardList";
 import Cards from "@components/Cards";
-import { getContenu } from "@services/api";
 import iconCarousel from "../assets/images/carousel-icon.png";
 import iconList from "../assets/images/list.png";
+
+import "../css/Wallet.css";
 
 export default function Wallet() {
   const isMobile = useMediaQuery({ maxWidth: 768 });

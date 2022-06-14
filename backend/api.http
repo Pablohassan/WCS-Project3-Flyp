@@ -1,0 +1,17 @@
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "marc.hazime@gmail.com",
+  "password": "Bibibou13!"
+}
+
+###
+
+POST http://localhost:5000/
+Content-Type: application/json
+
+{
+  "email": "colonel",
+  "password": "admin1234"
+}

@@ -7,7 +7,6 @@ import FlypDecrib from "@components/FlypDecrib";
 import FlypCard from "@components/FlypCard";
 import Top from "@pages/Top";
 import Project from "@pages/Project";
-import Profile from "@pages/Profile";
 import BaseLayout from "./layout/BaseLayout";
 import AdminLayout from "./layout/AdminLayout";
 import "./App.css";
@@ -36,7 +35,6 @@ function App() {
           <Route path="/top" element={<Top />} />
           <Route path="describ" element={<FlypDecrib />} />
           <Route path="flypcard" element={<FlypCard />} />
-          <Route path="profile" element={<Profile />} />
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>

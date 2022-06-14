@@ -20,11 +20,11 @@
     "husky": "^7.0.0"
   },
   "dependencies": {
-    "argon2": "^0.28.5",
+    "esbuild": "^0.14.43",
     "gyp": "^0.5.0",
-    "joi": "^17.6.0",
     "node-pre-gyp": "^0.17.0",
     "nodemon": "^2.0.16",
+    "react-hook-form": "^7.32.1",
     "react-router-dom": "^6.3.0",
     "react-spring": "^9.4.5",
     "react-spring-carousel": "^2.0.19",

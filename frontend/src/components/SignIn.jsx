@@ -1,15 +1,38 @@
-// import { useState } from "react";
-import { Link } from "react-router-dom";
-import "../css/SignIn.css";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+
+import { login } from "@services/api";
 import bgImage from "@assets/images/franckOcean.jpg";
+import "../css/SignIn.css";
 
 export default function SignIn() {
+  const [error, setError] = useState("");
+  const [user, setUser] = useState();
+
+  const { register, handleSubmit } = useForm();
+  const onSubmit = async (formData) => {
+    setError("");
+
+    try {
+      setUser(await login(formData));
+    } catch (err) {
+      setError("identifiants incorrects");
+    }
+  };
+
+  if (user) {
+    return (
+      <p className="text-center text-8xl text-bold">Welcome {user.pseudo}</p>
+    );
+  }
+
   return (
     <div className="bodySignIn">
       <img className="bgImageSignIn" src={bgImage} alt="franckOcean" />
       <div className="loginBox">
-        <form className="loginBox2">
+        <form className="loginBox2" onSubmit={handleSubmit(onSubmit)}>
           <p className="loginBoxTitle">Login to your account</p>
+          {error && <p className="text-red-300">{error}</p>}
 
           <div className="loginBoxHr">
             <hr className="w-full bg-gray-400 my-2" />
@@ -20,9 +43,9 @@ export default function SignIn() {
             </label>
             <input
               id="email"
-              name="email"
               type="email"
               className="loginBoxInput"
+              {...register("email")}
             />
           </div>
           <div className="mt-6  w-full">
@@ -32,9 +55,9 @@ export default function SignIn() {
             <div className="relative flex items-center justify-center">
               <input
                 id="password"
-                name="password"
                 type="password"
                 className="loginBoxInput"
+                {...register("password")}
               />
               <div className="loginBoxEyePassword">
                 <svg
@@ -52,14 +75,12 @@ export default function SignIn() {
               </div>
             </div>
           </div>
-          <Link to="/Wallet">
-            <button
-              type="button"
-              className="loginBoxButton focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-red-700 border rounded hover:bg-red-600 py-4 w-full"
-            >
-              Connect to your account
-            </button>
-          </Link>
+          <button
+            type="submit"
+            className="loginBoxButton focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-red-700 border rounded hover:bg-red-600 py-4 w-full"
+          >
+            Connect to your account
+          </button>
         </form>
       </div>
     </div>
