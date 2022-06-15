@@ -25,6 +25,7 @@ class LoginController {
     // si l'utilisateur n'existe pas, on renvoi un code 401 Unauthorized
     if (data.length === 0) {
       res.sendStatus(401);
+      return;
     }
 
     const user = data[0];
@@ -32,13 +33,13 @@ class LoginController {
     // On compare si le mot de passe récupéré (depuis les données POST) est le même quel e MDP de l'utilisateur récupéré.
     // si les MDP correspondent on retourne l'utilisateur sans le Mdp
     if (await bcrypt.compare(password, user.password)) {
-      // on supprime le mdp de l'objet utilisateur à renvoyer
+      // on supprime le mdp de l'objet utilisateur à renvoyer et
+      // on renvoie l'utilisateur récupéré, mais sans le mot de passe
       const { password: _, ...response } = user;
       res.send(response);
+    } else {
+      res.sendStatus(401);
     }
-    // On renvoie l'utilisateur récupéré, mais sans le mot de passe
-
-    res.sendStatus(401);
   };
 }
 
