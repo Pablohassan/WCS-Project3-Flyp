@@ -34,18 +34,6 @@ export default function Wallet() {
   function cardListShow() {
     setShowCardList(!showCardList);
   }
-
-  // const [CardList, setCardList] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchCards = async () => {
-  //     const response = await axios("https://api.deezer.com");
-  //     setCardList(response.data);
-  //     console.log(response.data);
-  //   };
-  //   fetchCards();
-  // }, []);
-
   return (
     <div className="Wallet-main">
       <Navbar />
