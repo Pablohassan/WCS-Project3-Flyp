@@ -1,6 +1,5 @@
 .searchBarBox {
   @apply relative w-4/5 sm:w-3/5 lg:w-2/5 bg-white shadow-xl border border-slate-400  rounded-full mt-28;
-  margin-top: 22%;
 }
 
 .searchBarContainer {

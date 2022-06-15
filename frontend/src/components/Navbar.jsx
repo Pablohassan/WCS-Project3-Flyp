@@ -8,6 +8,7 @@ export default function Navbar() {
         <div className="flex justify-between ">
           <div className="flex justify-between space-x-7 ">
             <div />
+
             <div className="hidden md:flex items-center space-x-10 justify-start">
               <Link
                 to="/wallet"

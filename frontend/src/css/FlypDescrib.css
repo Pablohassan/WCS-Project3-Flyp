@@ -172,10 +172,11 @@
   }
   .flycard {
     display: flex;
+
     justify-content: center;
     flex-direction: row;
     min-width: 30vw;
-    margin-top: 100%;
+    margin-top: 990px;
     font-size: 15px;
     margin-left: 20%;
   }
@@ -364,10 +365,7 @@
 
   .cardfocusopen {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-area: 1 / 1 / 2 / 2;
   }
   .flycard {
     margin-top: 300px;
@@ -381,27 +379,29 @@
 
 @media (max-width: 389px) {
   .dropdownopen {
+    min-width: 100%;
     scroll-behavior: smooth;
     display: grid;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
 
-    min-height: 360px;
-    min-width: 360px;
+    min-height: 110vh;
+    width: fit-content;
   }
   .dropdownclosed {
+    display: grid;
     scroll-behavior: smooth;
     display: none;
     z-index: -10;
-    max-width: 90vw;
+    max-width: 10vw;
     justify-content: flex-start;
     align-items: center;
   }
 
   .dropdownopen {
-    display: flex;
+    display: grid;
     margin-top: 5%;
-
+    grid-area: 2 / 1 / 2 / 1;
     z-index: -1;
     -webkit-animation: dropdownopen 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1
       both;
@@ -436,8 +436,8 @@
       opacity: 0;
     }
     100% {
-      -webkit-transform: translateY(0px);
-      transform: translateY(-500px);
+      -webkit-transform: translateY(-400px);
+      transform: translateY(-400px);
       opacity: 1;
     }
   }
@@ -449,7 +449,7 @@
   }
 
   .dropdownclosed {
-    min-width: 100vw;
+    min-width: 10vw;
     -webkit-animation: dropdownclosed 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1
       both;
     animation: dropdownclosed 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1 both;
@@ -473,29 +473,10 @@
     }
     100% {
       -webkit-transform: translateY(-150px);
-      transform: translateY(-20%);
+      transform: translateY(-50%);
     }
   }
-  @-webkit-keyframes flycard {
-    0% {
-      -webkit-transform: translateY(0);
-      transform: translateY(100);
-    }
-    100% {
-      -webkit-transform: translateY(100px);
-      transform: translateY(100px);
-    }
-  }
-  @keyframes flycard {
-    0% {
-      -webkit-transform: translateY(0);
-      transform: translateY(100);
-    }
-    100% {
-      -webkit-transform: translateY(100px);
-      transform: translateY(100px);
-    }
-  }
+
   .bgfrank {
     display: flex;
     flex-direction: column;
@@ -550,19 +531,16 @@
     font-size: 1.5em;
   }
   .cardfocusclosed {
-    display: flex;
-    z-index: 20;
-
-    top: 25%;
+    display: grid;
+    width: 100vw;
+    grid-area: 1 / 1 / 2 / 2;
   }
 
   .cardfocusopen {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    margin-bottom: -50px;
+    height: 100%;
+    min-width: 100vw;
+    grid-area: 1 / 1 / 2 / 2;
   }
   .flycard {
     display: flex;

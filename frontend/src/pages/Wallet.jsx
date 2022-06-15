@@ -34,6 +34,7 @@ export default function Wallet() {
   function cardListShow() {
     setShowCardList(!showCardList);
   }
+
   return (
     <div className="Wallet-main">
       <Navbar />

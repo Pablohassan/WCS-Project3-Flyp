@@ -86,23 +86,23 @@ function Slide({
   const totalPresentables = 2 * offsetRadius + 1;
 
   const translateYoffset =
-    50 * (Math.abs(offsetFromMiddle) / (offsetRadius + 1));
-  let translateY = -50;
+    70 * (Math.abs(offsetFromMiddle) / (offsetRadius + 1));
+  let translateY = -110;
 
   if (offsetRadius !== 0) {
     if (index === 0) {
-      translateY = 0;
+      translateY = 110;
     } else if (index === totalPresentables - 1) {
-      translateY = -100;
+      translateY = -110;
     }
   }
 
   if (offsetFromMiddle === 0 && down) {
     translateY += delta[1] / (offsetRadius + 1);
-    if (translateY > -40) {
+    if (translateY > -110) {
       moveSlide(-1);
     }
-    if (translateY < -100) {
+    if (translateY < -120) {
       moveSlide(1);
     }
   }
