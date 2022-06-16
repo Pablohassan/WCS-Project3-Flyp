@@ -1,30 +1,32 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
-
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "@components/UserContextProvider";
 import { login } from "@services/api";
+
 import bgImage from "@assets/images/franckOcean.jpg";
 import "../css/SignIn.css";
 
 export default function SignIn() {
-  const [error, setError] = useState("");
-  const [user, setUser] = useState();
+  // ajout se la sessions user rusmir
+  const navigate = useNavigate();
+  const [error, setError] = useState();
+  const { setUser } = useContext(UserContext);
+  //
+
+  // const [user, setUser] = useState();
 
   const { register, handleSubmit } = useForm();
-  const onSubmit = async (formData) => {
-    setError("");
 
+  const onSubmit = async (formData) => {
+    // setError("");
     try {
       setUser(await login(formData));
+      navigate("/wallet");
     } catch (err) {
       setError("identifiants incorrects");
     }
   };
-
-  if (user) {
-    return (
-      <p className="text-center text-8xl text-bold">Welcome {user.pseudo}</p>
-    );
-  }
 
   return (
     <div className="bodySignIn">

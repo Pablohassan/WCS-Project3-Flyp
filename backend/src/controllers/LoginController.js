@@ -3,6 +3,18 @@ const Joi = require("joi");
 const models = require("../models");
 
 class LoginController {
+  // ajouts pour le controle de la session par rusmir
+  static me = async (req, res) => {
+    const { user } = req.session;
+    if (!user) {
+      res.sendStatus(401);
+      return;
+    }
+
+    res.send(user);
+  };
+  //
+
   static login = async (req, res) => {
     // récupérer les données du POST (nickname, password)
     const { email, password } = req.body;
@@ -35,11 +47,26 @@ class LoginController {
     if (await bcrypt.compare(password, user.password)) {
       // on supprime le mdp de l'objet utilisateur à renvoyer et
       // on renvoie l'utilisateur récupéré, mais sans le mot de passe
-      const { password: _, ...response } = user;
-      res.send(response);
-    } else {
-      res.sendStatus(401);
+      //   const { password: _, ...response } = user;
+      //   res.send(response);
+      // } else {
+      //   res.sendStatus(401);
+      // }
+
+      // modif réalisé pour implementer la sessions
+
+      delete user.password;
+
+      // On ajoute le user en session
+      req.session.user = user;
+
+      res.send(user);
+      return;
     }
+
+    // Si on arrive ici, c'est que les mots de passe ne correspondent
+    // pas, donc on renvoie une 401 Unauthorized
+    res.sendStatus(401);
   };
 }
 

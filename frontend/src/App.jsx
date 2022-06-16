@@ -1,6 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import WalletConnexion from "@pages/Walletconnexion";
+import ProtectedRoute from "@components/ProtectedRoute";
+import UserContextProvider from "@components/UserContextProvider";
+import NotFoundPage from "@pages/NotFoundPage";
 import Wallet from "@pages/Wallet";
 import Administration from "@pages/Administration";
 import FlypDecrib from "@components/FlypDecrib";
@@ -16,32 +19,43 @@ function App() {
   const [login, setlog] = useState("");
   const [pass, setPass] = useState("");
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<BaseLayout />}>
-          <Route
-            path=""
-            element={
-              <WalletConnexion
-                login={login}
-                onLoginChange={setlog}
-                pass={pass}
-                onPasschange={setPass}
-              />
-            }
-          />
-          <Route path="/wallet" element={<Wallet />} />
-          <Route path="/project" element={<Project />} />
-          <Route path="/top" element={<Top />} />
-          <Route path="describ" element={<FlypDecrib />} />
-          <Route path="flypcard" element={<FlypCard />} />
-        </Route>
+    <UserContextProvider>
+      <div>
+        <Routes>
+          <Route path="/" element={<BaseLayout />}>
+            <Route
+              path=""
+              element={
+                <WalletConnexion
+                  login={login}
+                  onLoginChange={setlog}
+                  pass={pass}
+                  onPasschange={setPass}
+                />
+              }
+            />
 
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route path="" element={<Administration />} />
-        </Route>
-      </Routes>
-    </div>
+            <Route
+              path="/wallet"
+              element={
+                <ProtectedRoute>
+                  <Wallet />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/project" element={<Project />} />
+            <Route path="/top" element={<Top />} />
+            <Route path="describ" element={<FlypDecrib />} />
+            <Route path="flypcard" element={<FlypCard />} />
+          </Route>
+
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route path="" element={<Administration />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </div>
+    </UserContextProvider>
   );
 }
 

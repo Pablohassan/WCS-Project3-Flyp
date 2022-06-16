@@ -32,8 +32,8 @@ export default function flypCard() {
             <div className="absolute my-rotate-y-180 rounded-xl backface-hidden translate-x-' w-full bg-gray-100 overflow-hidden">
               <div className="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-24">
                 <h1 className="text-2xl translate-y-4 font-semibold">BLOND</h1>
-                <p className="my-2 translate-y-6">Projet</p>
-                <p className="translate-y-6">
+                <p className="my-2 translate-y-6 text-sm">Projet</p>
+                <p className="translate-y-6 text-sm ">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Facilis itaque assumenda saepe animi maxime libero non quasi,
                 </p>
@@ -41,7 +41,7 @@ export default function flypCard() {
                 <button
                   onClick={() => setIsOpen((prev) => !prev)}
                   type="button"
-                  className="bg-teal-500 translate-y-16 px-4 py-2 font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-20 scale-0 group-hover:scale-125"
+                  className="bg-teal-500 text-sm translate-y-16 px-4 py-2 font-semibold text-white rounded-full absolute -bottom-20 delay-500 duration-1000 group-hover:bottom-20 scale-0 group-hover:scale-125"
                 >
                   test
                 </button>
