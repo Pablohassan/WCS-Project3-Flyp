@@ -12,14 +12,10 @@ export default function SignIn() {
   const navigate = useNavigate();
   const [error, setError] = useState();
   const { setUser } = useContext(UserContext);
-  //
-
-  // const [user, setUser] = useState();
 
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (formData) => {
-    // setError("");
     try {
       setUser(await login(formData));
       navigate("/wallet");

@@ -52,24 +52,6 @@ export default function Burger() {
                   Wallet
                 </Link>
               </li>
-              <li className="flex justify-center border-b border-gray-400 my-8 uppercase hover:bg-gray-600/50 w-full my-0 h-20 active:bg-gray-600/50">
-                <Link
-                  className=" w-full flex items-center justify-center "
-                  to="/project"
-                  onClick={hideBurger}
-                >
-                  Projet
-                </Link>
-              </li>
-              <li className="flex justify-center  border-b border-gray-400 my-8 uppercase hover:bg-gray-600/50 w-full my-0 h-20 active:bg-gray-600/50">
-                <Link
-                  className="w-full flex items-center justify-center"
-                  to="/top"
-                  onClick={hideBurger}
-                >
-                  Top
-                </Link>
-              </li>
               <li className="flex justify-center  border-b border-gray-400 my-8 uppercase hover:bg-gray-600/50 w-full my-0 h-20">
                 <Link
                   className="w-full flex items-center justify-center"
@@ -93,12 +75,6 @@ export default function Burger() {
         <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
           <li>
             <Link to="/wallet">Wallet</Link>
-          </li>
-          <li>
-            <Link to="/project">Project</Link>
-          </li>
-          <li>
-            <Link to="/top">Top</Link>
           </li>
           <li>
             <Link to="/">Deconnexion</Link>
