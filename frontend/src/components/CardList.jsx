@@ -47,7 +47,8 @@ export default function CardList({
                       <h3>
                         <br />
                         <br />
-                        Drop du projet :{lancement}
+                        Drop du projet :{" "}
+                        {new Date(lancement).toLocaleDateString("fr-FR")}
                       </h3>
                       <button
                         type="button"
