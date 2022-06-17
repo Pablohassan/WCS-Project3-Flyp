@@ -15,7 +15,7 @@ import "../css/Wallet.css";
 export default function Wallet() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const [showSearchBar, setShowSearchBar] = useState(!isMobile);
-  const [showCardList, setShowCardList] = useState(false);
+  const [showCardList, setShowCardList] = useState(true);
   const [cardListButtonName, setCardListButtonName] = useState(false);
   const [newCardList, setNewCardList] = useState([]);
 
@@ -28,12 +28,23 @@ export default function Wallet() {
     fetchContenu();
   }, []);
 
-  function switchListToCaroussel() {
-    setCardListButtonName(!cardListButtonName);
-  }
   function cardListShow() {
     setShowCardList(!showCardList);
   }
+  function switchListToCaroussel() {
+    setCardListButtonName(!cardListButtonName);
+  }
+
+  // const [CardList, setCardList] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchCards = async () => {
+  //     const response = await axios("https://api.deezer.com");
+  //     setCardList(response.data);
+  //     console.log(response.data);
+  //   };
+  //   fetchCards();
+  // }, []);
 
   // const [CardList, setCardList] = useState([]);
 
@@ -50,7 +61,10 @@ export default function Wallet() {
     <div className="Wallet-main">
       <Navbar />
       {((isMobile && showSearchBar) || !isMobile) && (
-        <div className="searchBarDesktop">
+        <div
+          className="searchBarDesktop with-2/3 margin-0 
+        "
+        >
           {!isMobile && (
             <button
               className="h-10"

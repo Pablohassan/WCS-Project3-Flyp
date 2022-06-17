@@ -211,8 +211,10 @@ body {
 }
 
 .Wallet-main {
-  margin-top: 20%;
-  min-height: 50%;
+
+  margin-top: 10%;
+  min-height: 10%;
+
 }
 
 .container-wallet {
