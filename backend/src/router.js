@@ -1,6 +1,7 @@
 const express = require("express");
 
 const {
+  ImagesCardListController,
   ItemController,
   CardListController,
   LoginController,
@@ -14,7 +15,11 @@ router.put("/items/:id", ItemController.edit);
 router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
-router.get("/cardlist", CardListController.browse);
+router.get(
+  "/cardlist",
+  CardListController.browse,
+  ImagesCardListController.browse
+);
 router.post("/login", LoginController.login);
 
 module.exports = router;

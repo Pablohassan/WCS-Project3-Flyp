@@ -138,11 +138,7 @@
   .cardfocusclosed {
     display: flex;
     z-index: 2;
-    position: fixed;
-    top: 40%;
-
-    justify-content: center;
-    align-items: center;
+    position: relative;
   }
 
   .cardfocusopen {

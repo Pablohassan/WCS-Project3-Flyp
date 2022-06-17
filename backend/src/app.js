@@ -18,7 +18,7 @@ app.use(
     cookie: {
       secure: false,
       // durée de la session
-      maxAge: 24 * 60 * 60,
+      maxAge: 24 * 60 * 60 * 100,
     },
   })
 );

@@ -35,6 +35,17 @@ export default function Wallet() {
     setShowCardList(!showCardList);
   }
 
+  // const [CardList, setCardList] = useState([]);
+
+  // useEffect(() => {
+  //   const fetchCards = async () => {
+  //     const response = await axios("https://api.deezer.com");
+  //     setCardList(response.data);
+  //     console.log(response.data);
+  //   };
+  //   fetchCards();
+  // }, []);
+
   return (
     <div className="Wallet-main">
       <Navbar />
@@ -42,6 +53,7 @@ export default function Wallet() {
         <div className="searchBarDesktop">
           {!isMobile && (
             <button
+              className="h-10"
               type="button"
               onClick={() => {
                 switchListToCaroussel();
@@ -49,10 +61,10 @@ export default function Wallet() {
               }}
             >
               {cardListButtonName && (
-                <img className="h-4 px-2 mt-28" src={iconCarousel} alt="" />
+                <img className="h-4 px-2" src={iconCarousel} alt="" />
               )}
               {!cardListButtonName && (
-                <img className="h-4 px-2 mt-28 " src={iconList} alt="" />
+                <img className="h-4 px-2 " src={iconList} alt="" />
               )}
             </button>
           )}
@@ -60,8 +72,8 @@ export default function Wallet() {
         </div>
       )}
       {!showCardList && (
-        <div className="carousel-div">
-          <div className="App">
+        <div className="carousel-div grid-cols-3">
+          <div className="carousel-child">
             <div className="md:hidden">
               <Cards orientation="vertical" />
             </div>
@@ -79,11 +91,13 @@ export default function Wallet() {
           }`}
         >
           {newCardList.map((artist) => (
-            <li id={artist.id}>
+            <li key={artist.id}>
               <CardList
-                img={artist.coverImage}
+                img={artist.nom_image}
                 project={artist.flyp}
                 artist={artist.artist}
+                lancement={artist.start}
+                descriptif={artist.summary}
               />
             </li>
           ))}
