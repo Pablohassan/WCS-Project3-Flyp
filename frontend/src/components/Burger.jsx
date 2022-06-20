@@ -1,11 +1,19 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { logout } from "@services/api";
 
 export default function Burger() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const navigate = useNavigate();
 
   const hideBurger = () => {
     setIsNavOpen(!isNavOpen);
+  };
+
+  const onLogout = async () => {
+    await logout();
+    navigate("/");
   };
 
   return (
@@ -57,6 +65,7 @@ export default function Burger() {
                   className="w-full flex items-center justify-center"
                   alt=""
                   to="/"
+                  onClick={onLogout}
                 >
                   Deconnexion
                 </Link>
@@ -77,7 +86,9 @@ export default function Burger() {
             <Link to="/wallet">Wallet</Link>
           </li>
           <li>
-            <Link to="/">Deconnexion</Link>
+            <Link to="/" onClick={onLogout} alt="">
+              Logout
+            </Link>
           </li>
         </ul>
       </nav>

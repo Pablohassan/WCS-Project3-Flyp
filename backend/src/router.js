@@ -22,4 +22,14 @@ router.get(
 );
 router.post("/login", LoginController.login);
 
+router.get("/logout", function Logout(req, res) {
+  req.session.destroy((err) => {
+    if (err) {
+      res.sendStatus(401);
+    }
+
+    res.sendStatus(204);
+  });
+});
+
 module.exports = router;

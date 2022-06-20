@@ -17,6 +17,10 @@ export const login = async (data) => {
   return (await axios.post(`${API_URL}/login`, data)).data;
 };
 
+export const logout = async () => {
+  return (await axios(`${API_URL}/logout`)).data;
+};
+
 /**
  * Revoie le profil de l'utilisateur
  *

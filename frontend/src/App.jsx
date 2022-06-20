@@ -8,8 +8,6 @@ import Wallet from "@pages/Wallet";
 import Administration from "@pages/Administration";
 import FlypDecrib from "@components/FlypDecrib";
 import FlypCard from "@components/FlypCard";
-import Top from "@pages/Top";
-import Project from "@pages/Project";
 import BaseLayout from "./layout/BaseLayout";
 import AdminLayout from "./layout/AdminLayout";
 import "./App.css";
@@ -34,7 +32,6 @@ function App() {
                 />
               }
             />
-
             <Route
               path="/wallet"
               element={
@@ -43,8 +40,6 @@ function App() {
                 </ProtectedRoute>
               }
             />
-            <Route path="/project" element={<Project />} />
-            <Route path="/top" element={<Top />} />
             <Route path="describ" element={<FlypDecrib />} />
             <Route path="flypcard" element={<FlypCard />} />
           </Route>

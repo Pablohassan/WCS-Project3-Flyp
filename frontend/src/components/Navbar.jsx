@@ -1,12 +1,18 @@
-import { Link } from "react-router-dom";
-
-import { UserContext } from "@components/UserContextProvider";
 import { useContext } from "react";
-import disconnectImage from "@assets/disconnect.png";
+import { Link, useNavigate } from "react-router-dom";
+
+import { logout } from "@services/api";
+import { UserContext } from "@components/UserContextProvider";
 import Burger from "./Burger";
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const { user } = useContext(UserContext);
+
+  const onLogout = async () => {
+    await logout();
+    navigate("/");
+  };
 
   return (
     <nav className="bg-neutral-50 justify-between shadow-lg fixed top-0 right-0 left-0 z-20">
@@ -26,15 +32,10 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-3 ">
             <p className="py-2 px-2 font-medium">{user.pseudo}</p>
           </div>
-
-          <div className=" flex items-center">
-            <Link to="/">
-              <img
-                className="disconnectBtn h-10 w-10 mr-2"
-                src={disconnectImage}
-                alt="Déconnexion"
-              />
-            </Link>
+          <div className=" hidden md:flex items-center">
+            <button type="button" onClick={onLogout}>
+              Déconnexion
+            </button>
           </div>
 
           <div className="md:hidden flex items-center">

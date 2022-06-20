@@ -35,28 +35,6 @@ export default function Wallet() {
     setCardListButtonName(!cardListButtonName);
   }
 
-  // const [CardList, setCardList] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchCards = async () => {
-  //     const response = await axios("https://api.deezer.com");
-  //     setCardList(response.data);
-  //     console.log(response.data);
-  //   };
-  //   fetchCards();
-  // }, []);
-
-  // const [CardList, setCardList] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchCards = async () => {
-  //     const response = await axios("https://api.deezer.com");
-  //     setCardList(response.data);
-  //     console.log(response.data);
-  //   };
-  //   fetchCards();
-  // }, []);
-
   return (
     <div className="Wallet-main">
       <Navbar />
