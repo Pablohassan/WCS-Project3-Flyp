@@ -1,20 +1,22 @@
-@media (min-width: 670px) {
+@media (min-width: 1470px) {
   .dropdownopen {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 350px;
-    min-width: 400px;
+
     margin-left: 100px;
   }
   .dropdownclosed {
+    max-width: 384px;
     display: flex;
     display: none;
     transform: translateX(100px);
     justify-content: center;
     align-items: center;
   }
-
+  .butonList {
+    margin-top: 33px;
+  }
   .dropdownopen {
     /* margin-top: 100px; */
 
@@ -136,9 +138,12 @@
     font-size: 1.5em;
   }
   .cardfocusclosed {
-    display: flex;
     z-index: 2;
     position: relative;
+    margin-bottom: -30px;
+
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .cardfocusopen {
@@ -159,7 +164,7 @@
   }
 }
 
-@media (min-width: 389px) and (max-width: 670px) {
+/* @media (min-width: 389px) and (max-width: 670px) {
   .dropdownopen {
     scroll-behavior: smooth;
     display: grid;
@@ -300,9 +305,9 @@
     border-bottom-left-radius: 20px;
     z-index: -10;
 
-    /* @apply bg-[url('../assets/images/frank-ocean-bgt.jpeg')];  */
-  }
-  .container-desc {
+    /* @apply bg-[url('../assets/images/frank-ocean-bgt.jpeg')];  
+  }*/
+/* .container-desc {
     display: flex;
     flex-direction: column;
     z-index: -1;
@@ -331,13 +336,13 @@
     font-size: 1.5em;
   }
   .cardfocusclosed {
-    display: flex;
-    z-index: 20;
-    /* position: fixed;
-    top: 25%;
-    margin: auto;
-    justify-content: flex-end;
-    align-items: flex-start; */
+    z-index: 2;
+    position: relative;
+    margin-bottom:-23px ;
+   
+
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .cardfocusopen {
@@ -352,17 +357,19 @@
 
     justify-content: center;
   }
-}
+}  */
 
-@media (max-width: 389px) {
+@media (max-width: 1950px) {
   .dropdownopen {
     display: flex;
     justify-content: center;
     align-items: center;
 
     min-height: 360px;
+    max-width: 384px;
   }
   .dropdownclosed {
+    max-width: 384px;
     display: flex;
     display: none;
 
@@ -491,15 +498,17 @@
     font-size: 1.6em;
   }
   .cardfocusclosed {
+    max-width: 384px;
     z-index: 2;
-    position: fixed;
-    top: 25%;
+    position: relative;
+    margin-bottom: -30px;
 
     justify-content: center;
     align-items: flex-start;
   }
 
   .cardfocusopen {
+    max-width: 384px;
     margin-top: 30%;
     z-index: 2;
   }

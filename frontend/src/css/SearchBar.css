@@ -5,12 +5,12 @@
 }
 
 .searchBarContainer {
-  @apply container mx-auto py-1 text-black;
+  @apply container mx-auto py-0 text-black;
 }
 
 .searchBarInput {
   @apply w-full rounded-full text-gray-800 transition focus:outline-none focus:border-transparent p-2 leading-normal text-lg lg:text-xl;
-  padding: 0.22em;
+
   font-size: 1em;
 }
 

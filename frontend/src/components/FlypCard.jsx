@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import imgflyp from "@assets/images/blond.png";
 
-export default function flypCard() {
+export default function flypCard({ imgflyp, descriptif, lancement, artist }) {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -22,7 +20,7 @@ export default function flypCard() {
         <div className="flycard w-[100%] h-[250px]  cursor-pointer group perspective">
           <div />
           <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full delay-1000 duration-1000">
-            <div className="absolute backface-hidden rounded-xl border-1 w-full h-100">
+            <div className="absolute backface-hidden rounded-xl border-1 w-full h-200">
               <img
                 src={imgflyp}
                 alt="projet-blond"
@@ -31,11 +29,12 @@ export default function flypCard() {
             </div>
             <div className="absolute my-rotate-y-180 rounded-xl backface-hidden translate-x-' w-full bg-gray-100 overflow-hidden">
               <div className="text-center flex flex-col items-center justify-center h-full text-gray-800 px-2 pb-24">
-                <h1 className="text-2xl translate-y-4 font-semibold">BLOND</h1>
-                <p className="my-2 translate-y-6 text-sm">Projet</p>
-                <p className="translate-y-6 text-sm ">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Facilis itaque assumenda saepe animi maxime libero non quasi,
+                <h1 className="text-2xl translate-y-4 font-semibold">
+                  {artist}
+                </h1>
+                <p className="my-2 translate-y-6 text-sm">{lancement}</p>
+                <p className="translate-y-4 text-sm max-h-[200px] ">
+                  {descriptif}
                 </p>
 
                 <button
@@ -50,7 +49,7 @@ export default function flypCard() {
           </div>
         </div>
       </section>
-      <div className={`dropdown${isOpen ? "open" : "closed"}`}>
+      {/* <div className={`dropdown${isOpen ? "open" : "closed"}`}>
         <div className="bgfrank">
           <div className="container-desc ">
             <header className="frankhead ">
@@ -88,7 +87,7 @@ export default function flypCard() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
