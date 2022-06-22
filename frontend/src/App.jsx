@@ -1,17 +1,17 @@
 import { Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import WalletConnexion from "@pages/Walletconnexion";
+
 import ProtectedRoute from "@components/ProtectedRoute";
 import UserContextProvider from "@components/UserContextProvider";
+import LoginPage from "@pages/LoginPage";
 import NotFoundPage from "@pages/NotFoundPage";
-import Wallet from "@pages/Wallet";
+import WalletPage from "@pages/WalletPage";
 import Administration from "@pages/Administration";
-import FlypDecrib from "@components/FlypDecrib";
-import FlypCard from "@components/FlypCard";
+
 import BaseLayout from "./layout/BaseLayout";
 import AdminLayout from "./layout/AdminLayout";
+
 import "./App.css";
-// import SearchBar from "@components/SearchBar";
 
 function App() {
   const [login, setlog] = useState("");
@@ -24,7 +24,7 @@ function App() {
             <Route
               path=""
               element={
-                <WalletConnexion
+                <LoginPage
                   login={login}
                   onLoginChange={setlog}
                   pass={pass}
@@ -36,12 +36,10 @@ function App() {
               path="/wallet"
               element={
                 <ProtectedRoute>
-                  <Wallet />
+                  <WalletPage />
                 </ProtectedRoute>
               }
             />
-            <Route path="describ" element={<FlypDecrib />} />
-            <Route path="flypcard" element={<FlypCard />} />
           </Route>
 
           <Route path="/admin" element={<AdminLayout />}>

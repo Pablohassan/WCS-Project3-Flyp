@@ -1,29 +1,7 @@
 .header-wallet {
   height: 100px;
-  /* max-width: 500px;
-  min-width: 370px;
-  max-height: 500px; */
 }
 
-.titre-wallet {
-  /* position: fixed;
-  top: 15%;
-  left: 28%; */
-
-  /* padding: 2%;
-  font-size: 2em; */
-}
-.section2-wallet {
-  /* display: flex;
-  position: absolute;
-
-  max-height: 50px;
-  width: 100%;
-  max-width: 65%;
-
-  padding-right: 0;
-  margin-bottom: 0; */
-}
 .menu-bas1 {
   display: flex;
   background-color: rgb(201, 3, 3);

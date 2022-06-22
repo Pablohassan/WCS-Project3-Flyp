@@ -1,27 +1,15 @@
-const plugin = require("tailwindcss/plugin");
+const colors = require('tailwindcss/colors')
 
-const Myclass = plugin(function ({ addUtilities }) {
-  addUtilities({
-    ".my-rotate-y-180": {
-      transform: "rotateY(180deg)",
-    },
-    ".preserve-3d": {
-      transformStyle: "preserve-3d",
-    },
-    ".perspective": {
-      perspective: "1000px",
-    },
-    ".backface-hidden": {
-      backfaceVisibility: "hidden",
-    },
-  });
-});
 
 module.exports = {
   mode: "jit",
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    colors: {
+      primary: colors.red[700],
+      error: colors.red[700],
+      ...colors,
+    },
   },
-  plugins: [Myclass],
+  plugins: [],
 };

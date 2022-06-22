@@ -1,19 +1,19 @@
 import React, { useState, useEffect, Swiper, SwiperSlide } from "react";
 import { useMediaQuery } from "react-responsive";
-import { getContenu } from "@services/api";
 import { Virtual, Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import "../css/FlypCard.css";
 
+import { getContenu } from "@services/api";
 import Navbar from "@components/Navbar";
 import SearchBar from "@components/SearchBar";
 import Footer from "@components/Footer";
 import CardList from "@components/CardList";
-import FlypCard from "../components/FlypCard";
+import FlypCard from "@components/FlypCard";
 
-import iconCarousel from "../assets/images/carousel-icon.png";
-import iconList from "../assets/images/list.png";
+import iconCarousel from "@assets/images/carousel-icon.png";
+import iconList from "@assets/images/list.png";
+import "../css/FlypCard.css";
 
-export default function Wallet({
+export default function WalletPage({
   project,
   artist,
   lancement,
