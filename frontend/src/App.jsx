@@ -24,6 +24,15 @@ function App() {
             <Route
               path=""
               element={
+                <ProtectedRoute>
+                  <WalletPage />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/login"
+              element={
                 <LoginPage
                   login={login}
                   onLoginChange={setlog}
@@ -32,20 +41,13 @@ function App() {
                 />
               }
             />
-            <Route
-              path="/wallet"
-              element={
-                <ProtectedRoute>
-                  <WalletPage />
-                </ProtectedRoute>
-              }
-            />
           </Route>
 
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="" element={<Administration />} />
-            <Route path="*" element={<NotFoundPage />} />
           </Route>
+
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
     </UserContextProvider>

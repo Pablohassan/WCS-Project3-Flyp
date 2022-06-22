@@ -4,11 +4,12 @@ const API_URL = import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000/api";
 
 // modif session Configure axios pour envoyer les cookies à chaque requête
 axios.defaults.withCredentials = true;
-//
-// @returns {Promise<Array>}
-//
-export const getContenu = async () => {
-  return (await axios.get(`${API_URL}/cardlist`)).data;
+
+/**
+ * Retourne la liste des flyps de l'utilisateur
+ */
+export const getFlyps = async () => {
+  return (await axios.get(`${API_URL}/flyps`)).data;
 };
 // * @returns {Promise<Array>}
 ///*** Authentifie l'utilisateur

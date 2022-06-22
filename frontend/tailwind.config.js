@@ -7,6 +7,7 @@ module.exports = {
   theme: {
     colors: {
       primary: colors.red[700],
+      secondary: colors.pink[500],
       error: colors.red[700],
       ...colors,
     },

@@ -2,10 +2,13 @@ const bcrypt = require("bcrypt");
 const Joi = require("joi");
 const models = require("../models");
 
-class LoginController {
-  // ajouts pour le controle de la session par rusmir
+class AuthController {
+  /**
+   * Retourne l'utilisateur connecté
+   */
   static me = async (req, res) => {
     const { user } = req.session;
+
     if (!user) {
       res.sendStatus(401);
       return;
@@ -13,7 +16,6 @@ class LoginController {
 
     res.send(user);
   };
-  //
 
   static login = async (req, res) => {
     // récupérer les données du POST (nickname, password)
@@ -68,6 +70,12 @@ class LoginController {
     // pas, donc on renvoie une 401 Unauthorized
     res.sendStatus(401);
   };
+
+  static logout = (req, res) => {
+    req.session.destroy(() => {
+      res.sendStatus(204);
+    });
+  };
 }
 
-module.exports = LoginController;
+module.exports = AuthController;

@@ -10,7 +10,7 @@ export default function ProtectedRoute({ children }) {
   // Si aucun utilisateur n'existe dans le contexte,
   // on redirige vers le formulaire de login
   if (!user) {
-    return <Navigate to="/" />;
+    return <Navigate to="/login" />;
   }
 
   // Sinon on renvoie les enfants de la route (les pages)

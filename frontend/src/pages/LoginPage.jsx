@@ -6,7 +6,6 @@ import { UserContext } from "@components/UserContextProvider";
 import { login } from "@services/api";
 
 import bgImage from "@assets/images/franckOcean.jpg";
-import "../css/SignIn.css";
 
 export default function LoginPage() {
   const navigate = useNavigate();
@@ -18,7 +17,7 @@ export default function LoginPage() {
   const onSubmit = async (formData) => {
     try {
       setUser(await login(formData));
-      navigate("/wallet");
+      navigate("/");
     } catch (err) {
       setError("identifiants incorrects");
     }
@@ -26,7 +25,7 @@ export default function LoginPage() {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center"
+      className="-mt-20 min-h-screen flex items-center justify-center"
       style={{
         background: `url(${bgImage})`,
         backgroundPosition: "center center",
@@ -37,7 +36,7 @@ export default function LoginPage() {
         onSubmit={handleSubmit(onSubmit)}
         className="p-12 rounded-xl bg-white w-4/5 md:w-1/2 lg:1/4"
       >
-        <p className="pb-2 text-lg text-center sm:text-xl sm:text-left border-b border-b-color-gray-400">
+        <p className="mb-8 pb-2 text-lg text-center sm:text-xl sm:text-left border-b border-b-color-gray-400">
           Login to your account
         </p>
 
