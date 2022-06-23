@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <nav className="px-4 flex items-center bg-white shadow-lg fixed h-14 top-0 right-0 left-0 z-20">
-      <Link to="/wallet" className="py-4 px-2 text-grey-500 font-semibold">
+      <Link to="/" className="py-4 px-2 text-grey-500 font-semibold">
         Wallet
       </Link>
 

@@ -7,6 +7,7 @@ import { BiCarousel as CarouselViewIcon } from "react-icons/bi";
 
 import { getFlyps } from "@services/api";
 import FlypCard from "@components/FlypCard";
+import FlypCardCarousel from "@components/FlypCardCarousel";
 import ProjectDetails from "@components/ProjectDetails";
 import Modal from "@components/Modal";
 
@@ -14,9 +15,9 @@ import "swiper/css"; // eslint-disable-line
 import "swiper/css/virtual"; // eslint-disable-line
 
 export default function WalletPage() {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isMobile = useMediaQuery({ maxWidth: 620 });
   const [flyps, setFlyps] = useState([]);
-  const [view, setView] = React.useState("list");
+  const [view, setView] = React.useState(isMobile ? "carousel" : "list");
   const [search, setSearch] = React.useState("");
   const [selectedFlyp, setSelectedFlyp] = React.useState();
 
@@ -56,10 +57,10 @@ export default function WalletPage() {
       )}
 
       <div className="px-8">
-        <div className="flex mb-8">
+        <div className="flex justify-center mb-8">
           <button
             type="button"
-            className="mr-2 px-4 ml-2 rounded bg-primary text-white"
+            className="align-right px-4 mr-4 rounded bg-primary text-white"
             onClick={switchView}
             title={`Vue ${view === "list" ? "caroussel" : "liste"}`}
           >
@@ -67,7 +68,7 @@ export default function WalletPage() {
           </button>
 
           <input
-            className="block"
+            className="block md:w-1/2 "
             type="text"
             placeholder="Rechercher un flyp"
             onChange={onSearch}
@@ -75,7 +76,7 @@ export default function WalletPage() {
         </div>
 
         {view === "list" && (
-          <div className="mx-auto gap-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <div className="mx-auto gap-4 mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {flyps
               .filter(
                 (flyp) =>
@@ -109,7 +110,7 @@ export default function WalletPage() {
                   virtualIndex={index}
                   className=" display-flex justify-center align-center "
                 >
-                  <FlypCard
+                  <FlypCardCarousel
                     image={flyp.nom_image}
                     title={flyp.flyp}
                     artist={flyp.artist}

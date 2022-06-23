@@ -7,8 +7,12 @@ export default function ProjectDetails({
   onClose,
 }) {
   return (
-    <section>
-      <img src={image} className="w-full block" alt="Couverture du projet" />
+    <section className="transition duration-700 ease-in-out">
+      <img
+        src={image}
+        className=" w-full block rounded-xl "
+        alt="Couverture du projet"
+      />
 
       <div className="p-4 bg-blue-200">
         <header className="flex">

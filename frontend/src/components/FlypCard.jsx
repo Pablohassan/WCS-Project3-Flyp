@@ -6,9 +6,9 @@ export default function flypCard({
   onViewDetails,
 }) {
   return (
-    <section className="rounded-lg bg-white shadow-lg hover:shadow-xl hover:bg-slate-50 hover:scale-105 transition">
+    <section className="transition duration-700 ease-in-out rounded-lg bg-white shadow-lg hover:shadow-xl hover:bg-slate-50 hover:scale-105 transition ">
       <div
-        className="cursor-pointer h-[200px] bg-center bg-cover bg-no-repeat rounded-tl-lg rounded-tr-lg"
+        className="cursor-pointer h-[200px] bg-center bg-contain bg-no-repeat rounded-tl-lg rounded-tr-lg"
         style={{ backgroundImage: `url(${image})` }}
         onClick={onViewDetails}
       >
@@ -25,7 +25,7 @@ export default function flypCard({
         </p>
 
         <button
-          className="w-full mt-4 bg-secondary text-white font-bold uppercase px-6 py-3 rounded shadow-lg"
+          className="w-full mb-1 mt-4 bg-secondary text-white font-bold uppercase px-6 py-3 rounded shadow-lg"
           type="button"
           onClick={onViewDetails}
         >
