@@ -33,42 +33,22 @@ class AuthController {
       return;
     }
 
-    //  récupérer l'utilisateur possédant ce nickname
-    const [data] = await models.utilisateurs.findByEmail(email);
+    //  récupérer l'utilisateur possédant cet email
+    const user = await models.User.find({ where: { email } });
 
     // si l'utilisateur n'existe pas, on renvoi un code 401 Unauthorized
-    if (data.length === 0) {
+    if (!user) {
       res.sendStatus(401);
       return;
     }
 
-    const user = data[0];
-
-    // On compare si le mot de passe récupéré (depuis les données POST) est le même quel e MDP de l'utilisateur récupéré.
-    // si les MDP correspondent on retourne l'utilisateur sans le Mdp
-    if (await bcrypt.compare(password, user.password)) {
-      // on supprime le mdp de l'objet utilisateur à renvoyer et
-      // on renvoie l'utilisateur récupéré, mais sans le mot de passe
-      //   const { password: _, ...response } = user;
-      //   res.send(response);
-      // } else {
-      //   res.sendStatus(401);
-      // }
-
-      // modif réalisé pour implementer la sessions
-
+    if (await bcrypt.compare(password, user.password.replace("$2y", "$2b"))) {
       delete user.password;
-
-      // On ajoute le user en session
       req.session.user = user;
-
       res.send(user);
-      return;
+    } else {
+      res.sendStatus(401);
     }
-
-    // Si on arrive ici, c'est que les mots de passe ne correspondent
-    // pas, donc on renvoie une 401 Unauthorized
-    res.sendStatus(401);
   };
 
   static logout = (req, res) => {

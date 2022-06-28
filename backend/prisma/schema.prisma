@@ -1,0 +1,70 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  user
+  artist
+  admin
+}
+
+enum ProjectType {
+  photo
+  video
+  music
+  text
+}
+
+model User {
+  id              Int       @id @default(autoincrement())
+  createdAt       DateTime  @default(now())
+  lastConnectedAt DateTime  @default(now()) @updatedAt
+  role            Role      @default(user)
+  pseudo          String?   @db.VarChar(255)
+  email           String    @unique @db.VarChar(255)
+  password        String    @db.VarChar(72)
+  projects        Project[]
+  flyp            Flyp[] 
+}
+
+model Project {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  name      String   @db.VarChar(255)
+  view      Int      @default(0)
+  user      User     @relation(fields: [userId], references: [id])
+  userId    Int
+  resources Resource[]
+  flyps     Flyp[]
+}
+
+model Resource {
+  id                 Int         @id @default(autoincrement())
+  createdAt          DateTime    @default(now())
+  updatedAt          DateTime    @default(now()) @updatedAt
+  type               ProjectType
+  content            String      @db.Text
+  inWallet           Boolean     @default(false)
+  certificationLevel Int         @default(0)
+  poject      Project   @relation(fields:[projectId], references:[id])
+  projectId   Int
+
+}
+
+model Flyp{
+  id          Int       @id @default(autoincrement())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @default(now()) @updatedAt
+  activatedAt DateTime?
+  code        String    @db.Char(32)
+  user        User      @relation(fields: [userId], references: [id])
+  userId      Int
+  poject      Project   @relation(fields:[projectId], references:[id])
+  projectId   Int
+}

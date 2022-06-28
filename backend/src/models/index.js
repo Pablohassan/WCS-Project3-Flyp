@@ -1,26 +1,8 @@
 const fs = require("fs");
-const mysql = require("mysql2/promise");
 const path = require("path");
+const { PrismaClient } = require("@prisma/client");
 
-const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
-
-const pool = mysql.createPool({
-  host: DB_HOST,
-  // ajout pour session user
-  user: DB_USER,
-  //
-  password: DB_PASSWORD,
-  database: DB_NAME,
-});
-
-pool.getConnection().catch(() => {
-  console.warn(
-    "Warning:",
-    "Failed to get a DB connection.",
-    "Did you create a .env file with valid credentials?",
-    "Routes using models won't work as intended"
-  );
-});
+const connection = new PrismaClient();
 
 const models = fs
   .readdirSync(__dirname)
@@ -30,7 +12,7 @@ const models = fs
     const Manager = require(path.join(__dirname, file));
 
     // eslint-disable-next-line no-param-reassign
-    acc[Manager.table] = new Manager(pool, Manager.table);
+    acc[Manager.table] = new Manager(connection, Manager.table);
 
     return acc;
   }, {});

@@ -31,7 +31,8 @@ jobs:
             git pull
             npm run setup
             cd backend
-            node migrate.js
+            npx prisma generate
+            npx prisma migrate deploy
             cd ../frontend
             npm run build
             pm2 restart flyp

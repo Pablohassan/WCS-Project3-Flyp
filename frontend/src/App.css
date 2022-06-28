@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 input {
-  @apply p-2 w-full rounded border border-gray-300
+  @apply p-2 w-full rounded border border-gray-300;
 }

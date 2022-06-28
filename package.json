@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "setup": "npm i && husky install && npm --prefix ./frontend i --force && npm --prefix ./backend i --force",
+    "db:migrate": "npm --prefix ./backend run db:migrate && npm --prefix ./backend run db:generate",
+    "db:seed": "npm --prefix ./backend run db:migrate",
     "dev": "concurrently -n front,back -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm --prefix ./frontend run dev\" \"npm --prefix ./backend run dev\"",
     "dev-front": "npm --prefix ./frontend run dev",
     "dev-back": "npm --prefix ./backend run dev",
